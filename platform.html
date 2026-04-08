@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>資安教育平台解決方案比較儀表板</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Lucide 圖示 CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        /* 手機版固定左側欄位效果 */
+        .sticky-col { 
+            position: sticky; 
+            left: 0; 
+            background-color: #f9fafb; 
+            z-index: 20; 
+            border-right: 2px solid #e5e7eb; 
+        }
+        th.sticky-col { z-index: 30; background-color: #111827; border-right: 1px solid #374151; }
+        
+        .seo-bar { height: 8px; border-radius: 4px; background-color: #e5e7eb; display: inline-block; width: 30px; margin-right: 3px; }
+        .seo-bar.active-green { background-color: #10b981; }
+        .seo-bar.active-blue { background-color: #3b82f6; }
+        .seo-bar.active-gray { background-color: #9ca3af; }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-900 p-3 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="mb-10 text-center border-b border-gray-200 pb-8">
+            <h1 class="text-2xl md:text-4xl font-bold text-gray-900 mb-4">資安教育平台解決方案比較儀表板</h1>
+            <p class="text-gray-600 text-base md:text-lg max-w-2xl mx-auto px-4">
+                針對技術人力少、追求品牌曝光與招募引流的場景，分析 2026 年最合適的平台選擇。
+            </p>
+        </div>
+
+        <!-- Scroll Hint for Mobile -->
+        <div class="flex items-center justify-center gap-2 text-blue-500 text-xs font-bold mb-4 md:hidden animate-pulse">
+            <i data-lucide="arrow-left-right" class="w-4 h-4"></i>
+            左右滑動查看完整比較
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200 mb-12">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-gray-900 text-white">
+                            <th class="p-5 text-xs md:text-base font-semibold uppercase tracking-wider sticky-col">評估維度</th>
+                            <!-- Thinkific -->
+                            <th class="p-5 min-w-[220px] md:min-w-[260px]">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="zap" class="w-5 h-5 text-blue-400"></i>
+                                    <span class="font-bold text-lg md:text-xl">Thinkific</span>
+                                </div>
+                            </th>
+                            <!-- LearnWorlds -->
+                            <th class="p-5 min-w-[220px] md:min-w-[260px]">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="award" class="w-5 h-5 text-indigo-400"></i>
+                                    <span class="font-bold text-lg md:text-xl">LearnWorlds</span>
+                                </div>
+                            </th>
+                            <!-- WP -->
+                            <th class="p-5 min-w-[220px] md:min-w-[260px]">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="globe" class="w-5 h-5 text-emerald-400"></i>
+                                    <span class="font-bold text-lg md:text-xl">WP + Tutor LMS</span>
+                                </div>
+                            </th>
+                            <!-- Skilljar -->
+                            <th class="p-5 min-w-[220px] md:min-w-[260px]">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="building-2" class="w-5 h-5 text-slate-400"></i>
+                                    <span class="font-bold text-lg md:text-xl">Skilljar</span>
+                                </div>
+                            </th>
+                            <!-- Vibe -->
+                            <th class="p-5 min-w-[220px] md:min-w-[260px]">
+                                <div class="flex items-center gap-2">
+                                    <i data-lucide="code" class="w-5 h-5 text-purple-400"></i>
+                                    <span class="font-bold text-lg md:text-xl">Vibe Coding</span>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <!-- Row 1: Official / Demo -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">官方 / Demo</td>
+                            <td class="p-5">
+                                <a href="https://www.thinkific.com" target="_blank" class="text-blue-600 text-xs md:text-sm flex items-center gap-1 hover:underline mb-2 font-semibold">官方網站 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                <a href="http://www.youtube.com/watch?v=qK0dF7DiKlE" target="_blank" class="text-gray-700 font-bold text-xs bg-gray-100 px-3 py-1.5 rounded-lg hover:bg-gray-200 inline-flex items-center gap-1">查看 Demo</a>
+                            </td>
+                            <td class="p-5">
+                                <a href="https://www.learnworlds.com" target="_blank" class="text-blue-600 text-xs md:text-sm flex items-center gap-1 hover:underline mb-2 font-semibold">官方網站 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                <a href="https://www.learnworlds.com/watch-demo/" target="_blank" class="text-gray-700 font-bold text-xs bg-gray-100 px-3 py-1.5 rounded-lg hover:bg-gray-200 inline-flex items-center gap-1">查看 Demo</a>
+                            </td>
+                            <td class="p-5">
+                                <a href="https://www.themeum.com/product/tutor-lms/" target="_blank" class="text-blue-600 text-xs md:text-sm flex items-center gap-1 hover:underline mb-2 font-semibold">官方網站 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                <a href="https://demo.themeum.com/plugins/tutor-lms/" target="_blank" class="text-gray-700 font-bold text-xs bg-gray-100 px-3 py-1.5 rounded-lg hover:bg-gray-200 inline-flex items-center gap-1">查看 Demo</a>
+                            </td>
+                            <td class="p-5">
+                                <a href="https://www.skilljar.com" target="_blank" class="text-blue-600 text-xs md:text-sm flex items-center gap-1 hover:underline mb-2 font-semibold">官方網站 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                                <a href="https://anthropic.skilljar.com" target="_blank" class="text-gray-700 font-bold text-xs bg-gray-100 px-3 py-1.5 rounded-lg hover:bg-gray-200 inline-flex items-center gap-1">查看 Demo</a>
+                            </td>
+                            <td class="p-5 text-gray-400 text-sm italic">N/A (參考 Vercel)</td>
+                        </tr>
+                        <!-- Row 2: Positioning -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">產品定位</td>
+                            <td class="p-5 text-sm font-semibold text-gray-900">極速驗證 / 低維護</td>
+                            <td class="p-5 text-sm font-semibold text-gray-900">高質感品牌學院</td>
+                            <td class="p-5 text-sm font-semibold text-gray-900">長線 SEO / 流量回流</td>
+                            <td class="p-5 text-sm font-semibold text-gray-900">頂級企業門面</td>
+                            <td class="p-5 text-sm font-semibold text-gray-900">產品化 / 100% 自控</td>
+                        </tr>
+                        <!-- Row 3: Technical Barrier -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">技術門檻</td>
+                            <td class="p-5"><span class="text-xs px-3 py-1 rounded-full font-bold bg-emerald-100 text-emerald-700">極低</span></td>
+                            <td class="p-5"><span class="text-xs px-3 py-1 rounded-full font-bold bg-emerald-100 text-emerald-700">低</span></td>
+                            <td class="p-5"><span class="text-xs px-3 py-1 rounded-full font-bold bg-orange-100 text-orange-700">中</span></td>
+                            <td class="p-5"><span class="text-xs px-3 py-1 rounded-full font-bold bg-emerald-100 text-emerald-700">低</span></td>
+                            <td class="p-5"><span class="text-xs px-3 py-1 rounded-full font-bold bg-orange-100 text-orange-700">極高</span></td>
+                        </tr>
+                        <!-- Row 4: Cost & Trial -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">預估月費 & 試用</td>
+                            <td class="p-5">
+                                <div class="font-bold text-sm md:text-base text-gray-900">$99 USD (年繳 $74)</div>
+                                <div class="text-xs text-emerald-600 font-bold uppercase flex items-center gap-1 mt-1"><i data-lucide="zap" class="w-4 h-4"></i> 30 天免費試用</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="font-bold text-sm md:text-base text-gray-900">$99 USD (年繳 $79)</div>
+                                <div class="text-xs text-emerald-600 font-bold uppercase flex items-center gap-1 mt-1"><i data-lucide="zap" class="w-4 h-4"></i> 30 天免費試用</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="font-bold text-sm md:text-base text-gray-900">$60–90 USD (含主機)</div>
+                                <div class="text-xs text-gray-400 uppercase mt-1">無試用</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="font-bold text-sm md:text-base text-gray-900">$1,500 - $5,000+</div>
+                                <div class="text-xs text-gray-400 uppercase mt-1">需預約 Demo</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="font-bold text-sm md:text-base text-gray-900">$5–700 USD (依規模)</div>
+                                <div class="text-xs text-gray-400 uppercase mt-1">無試用</div>
+                            </td>
+                        </tr>
+                        <!-- Row 5: Certificate -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">證書功能備註</td>
+                            <td class="p-5 text-sm text-gray-700 leading-relaxed font-medium">✅ 需 Start 方案以上 (支援效期設定)</td>
+                            <td class="p-5 text-sm text-gray-700 leading-relaxed font-medium">✅ Pro Trainer 以上 (支援效期與課程時限連動)</td>
+                            <td class="p-5 text-sm text-gray-700 leading-relaxed font-medium">✅ 內建 Builder (支援效期管理與過期通知)</td>
+                            <td class="p-5 text-sm text-gray-700 leading-relaxed font-medium">✅ 企業級防偽 (含完整週期管理與自動重認證)</td>
+                            <td class="p-5 text-sm text-gray-400 italic font-medium">❌ 需自行開發邏輯與過期判定</td>
+                        </tr>
+                        <!-- Row 6: Video Processing -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">影片處理</td>
+                            <td class="p-5 text-sm text-gray-600">內建 (Wistia 後端)</td>
+                            <td class="p-5 text-sm text-gray-600">內建串流 + 互動影片</td>
+                            <td class="p-5 text-sm text-gray-600">需掛 CF Stream</td>
+                            <td class="p-5 text-sm text-gray-600">內建無限託管</td>
+                            <td class="p-5 text-sm text-gray-600">需接 Mux / CF</td>
+                        </tr>
+                        <!-- Row 7: Branding -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">品牌權限 (Logo)</td>
+                            <td class="p-5 text-sm text-gray-500">移除需 Grow 方案</td>
+                            <td class="p-5 text-sm text-gray-500">Pro 以上無限客製</td>
+                            <td class="p-5 text-sm text-gray-500 font-medium">100% 自有品牌</td>
+                            <td class="p-5 text-sm text-gray-500 font-medium">100% 自有品牌</td>
+                            <td class="p-5 text-sm text-gray-500 font-medium">100% 自有品牌</td>
+                        </tr>
+                        <!-- Row 8: SEO Strength -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">SEO 曝光強度</td>
+                            <td class="p-5">
+                                <div class="seo-bar active-gray"></div><div class="seo-bar"></div><div class="seo-bar"></div>
+                                <div class="text-xs text-gray-500 mt-2 font-medium">一般</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="seo-bar active-blue"></div><div class="seo-bar active-blue"></div><div class="seo-bar"></div>
+                                <div class="text-xs text-gray-500 mt-2 font-medium">優 (優於 Thinkific)</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="seo-bar active-green"></div><div class="seo-bar active-green"></div><div class="seo-bar active-green"></div>
+                                <div class="text-xs text-gray-500 mt-2 font-medium">最強 (流量入官網)</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="seo-bar active-blue"></div><div class="seo-bar active-blue"></div><div class="seo-bar"></div>
+                                <div class="text-xs text-gray-500 mt-2 font-medium">優 (企業級優化)</div>
+                            </td>
+                            <td class="p-5">
+                                <div class="seo-bar active-green"></div><div class="seo-bar active-green"></div><div class="seo-bar active-green"></div>
+                                <div class="text-xs text-gray-500 mt-2 font-medium">最強 (完全自控)</div>
+                            </td>
+                        </tr>
+                        <!-- Row 9: Famous Customers -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">知名企業客戶</td>
+                            <td class="p-5 text-sm font-bold text-gray-600 bg-gray-50 p-3 rounded-xl border border-gray-100">GoDaddy, Nasdaq</td>
+                            <td class="p-5 text-sm font-bold text-gray-600 bg-gray-50 p-3 rounded-xl border border-gray-100">SHI, Stratascale, Kaspersky</td>
+                            <td class="p-5 text-sm font-bold text-gray-600 bg-gray-50 p-3 rounded-xl border border-gray-100">專業培訓機構</td>
+                            <td class="p-5 text-sm font-bold text-gray-600 bg-gray-50 p-3 rounded-xl border border-gray-100">Anthropic, LinkedIn</td>
+                            <td class="p-5 text-sm font-bold text-gray-600 bg-gray-50 p-3 rounded-xl border border-gray-100">科技大廠內部系統</td>
+                        </tr>
+                        <!-- Row 10: Pros/Cons -->
+                        <tr>
+                            <td class="p-5 font-bold text-sm md:text-base text-gray-700 sticky-col">優缺點對決</td>
+                            <td class="p-5 align-top space-y-3">
+                                <div class="text-xs text-emerald-700 font-bold flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i> 系統極度穩定</div>
+                                <div class="text-xs text-gray-400 font-medium flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i> 版型較固定</div>
+                            </td>
+                            <td class="p-5 align-top space-y-3">
+                                <div class="text-xs text-emerald-700 font-bold flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i> 模板設計感強</div>
+                                <div class="text-xs text-gray-400 font-medium flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i> 學習曲線稍陡</div>
+                            </td>
+                            <td class="p-5 align-top space-y-3">
+                                <div class="text-xs text-emerald-700 font-bold flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i> 數據自主權</div>
+                                <div class="text-xs text-gray-400 font-medium flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i> 維護壓力較大</div>
+                            </td>
+                            <td class="p-5 align-top space-y-3">
+                                <div class="text-xs text-emerald-700 font-bold flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i> 頂級品牌力</div>
+                                <div class="text-xs text-gray-400 font-medium flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i> 預算門檻極高</div>
+                            </td>
+                            <td class="p-5 align-top space-y-3">
+                                <div class="text-xs text-emerald-700 font-bold flex gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i> 無限擴充性</div>
+                                <div class="text-xs text-gray-400 font-medium flex gap-2"><i data-lucide="x-circle" class="w-4 h-4 shrink-0"></i> 開發週期長</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Scenarios -->
+        <div class="mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8 flex items-center gap-2 px-2 text-slate-800">
+                <i data-lucide="zap" class="w-7 h-7 text-yellow-500"></i> 決策情境分析
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-2">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-500 hover:shadow-xl transition-shadow">
+                    <h4 class="text-lg font-bold mb-3 text-gray-800">不想養工程師</h4>
+                    <p class="text-sm text-gray-600 mb-5 leading-relaxed font-medium">預算固定、只求系統極速穩定且包含證書驗證。</p>
+                    <div class="bg-blue-50 px-4 py-2.5 rounded-xl font-bold text-blue-700 text-center text-sm">推薦 Thinkific</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-indigo-500 hover:shadow-xl transition-shadow">
+                    <h4 class="text-lg font-bold mb-3 text-gray-800">資安第一印象</h4>
+                    <p class="text-sm text-gray-600 mb-5 leading-relaxed font-medium">學員看到的「顏值」最重要，需要像高級學院。</p>
+                    <div class="bg-indigo-50 px-4 py-2.5 rounded-xl font-bold text-indigo-700 text-center text-sm">推薦 LearnWorlds</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-emerald-500 hover:shadow-xl transition-shadow">
+                    <h4 class="text-lg font-bold mb-3 text-gray-800">數據流量回歸</h4>
+                    <p class="text-sm text-gray-600 mb-5 leading-relaxed font-medium">希望課程搜尋流量直接留在公司官網域名下。</p>
+                    <div class="bg-emerald-50 px-4 py-2.5 rounded-xl font-bold text-emerald-700 text-center text-sm">推薦 WordPress</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-slate-700 hover:shadow-xl transition-shadow">
+                    <h4 class="text-lg font-bold mb-3 text-gray-800">整合進主產品</h4>
+                    <p class="text-sm text-gray-600 mb-5 leading-relaxed font-medium">不只是教育，需要 100% 自控與無縫整合。</p>
+                    <div class="bg-slate-100 px-4 py-2.5 rounded-xl font-bold text-slate-700 text-center text-sm">推薦 Vibe Coding</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-900 rounded-2xl p-8 md:p-12 text-white">
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="shrink-0 bg-yellow-400 text-gray-900 p-5 rounded-full shadow-lg shadow-yellow-400/20">
+                    <i data-lucide="alert-circle" class="w-10 h-10"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">核心建議</h3>
+                    <p class="text-gray-300 text-sm md:text-base italic mb-6 leading-relaxed font-medium">「既然是免費開放，第一步是驗證流量與內容，不要過早投入沈重的維運成本。」</p>
+                    <div class="grid grid-cols-1 gap-3 text-xs md:text-sm">
+                        <div class="bg-white/10 p-3 rounded-xl border border-white/20 flex items-center gap-3">
+                            <span class="bg-yellow-400 text-gray-900 font-bold px-2 py-0.5 rounded text-[10px]">Step 1</span>
+                            <span>先註冊 Thinkific 或 LearnWorlds 試用 30 天</span>
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-xl border border-white/20 flex items-center gap-3">
+                            <span class="bg-yellow-400 text-gray-900 font-bold px-2 py-0.5 rounded text-[10px]">Step 2</span>
+                            <span>同一份內容跑兩邊，觀察同事與學員的真實回饋</span>
+                        </div>
+                        <div class="bg-white/10 p-3 rounded-xl border border-white/20 flex items-center gap-3">
+                            <span class="bg-yellow-400 text-gray-900 font-bold px-2 py-0.5 rounded text-[10px]">Step 3</span>
+                            <span>三個月後根據流量數據，決定是否遷回 WordPress 長期持有或直上 Skilljar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化 Lucide 圖示
+        lucide.createIcons();
+    </script>
+</body>
+</html>
