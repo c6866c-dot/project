@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌸 京都五日｜雙壽星慶生之旅</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: #faf9f7;
+    color: #2d2d2d;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 0 0 30px 30px;
+  }
+  .hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.55) 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    padding-bottom: 36px;
+    text-align: center;
+  }
+  .hero-overlay h1 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    margin-bottom: 8px;
+  }
+  .hero-overlay p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Info bar */
+  .info-bar {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    padding: 20px 24px;
+    background: #fff;
+    border-radius: 18px;
+    margin: -20px 20px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    position: relative; z-index: 2;
+  }
+  .info-item { text-align: center; }
+  .info-item .label { font-size: 0.68rem; color: #999; letter-spacing: 0.1em; text-transform: uppercase; }
+  .info-item .value { font-size: 1rem; font-weight: 700; color: #333; margin-top: 2px; }
+
+  /* Days */
+  .days { padding: 32px 20px 0; }
+
+  .day-card {
+    background: #fff;
+    border-radius: 20px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .day-badge {
+    background: #e8645a;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+  .day-badge.day2 { background: #f0a44a; }
+  .day-badge.day3 { background: #4aaf85; }
+  .day-badge.day4 { background: #5b8dd9; }
+  .day-badge.day5 { background: #9b8dd0; }
+  .day-title { font-size: 1.05rem; font-weight: 700; color: #222; }
+  .day-subtitle { font-size: 0.82rem; color: #888; margin-top: 2px; }
+
+  .day-photo {
+    width: 100%; height: 200px;
+    object-fit: cover;
+    display: block;
+    background-color: #f0f0f0;
+  }
+
+  .day-body { padding: 18px 22px; }
+
+  /* Activity item */
+  .activity {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .activity:last-child { border-bottom: none; padding-bottom: 0; }
+  .activity-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+    padding-top: 2px;
+  }
+  .activity-content {}
+  .activity-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 4px;
+  }
+  .activity-desc {
+    font-size: 0.84rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  .activity-time {
+    display: inline-block;
+    font-size: 0.72rem;
+    background: #f4f4f4;
+    color: #888;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+
+  /* Restaurant card */
+  .restaurant-card {
+    background: linear-gradient(135deg, #fff9f5 0%, #fff 100%);
+    border: 1px solid #f0e8e0;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-top: 12px;
+  }
+  .restaurant-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #c84d3d;
+    margin-bottom: 6px;
+  }
+  .restaurant-photo {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+    display: block;
+  }
+  .restaurant-desc {
+    font-size: 0.83rem;
+    color: #555;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .chef-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #fff4f2;
+    border: 1px solid #f5d5d0;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 0.78rem;
+    color: #c84d3d;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 5px 0;
+    font-size: 0.83rem;
+    border-bottom: 1px dashed #f0e8e0;
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-name { color: #333; }
+  .menu-price { color: #c84d3d; font-weight: 700; }
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #fff8e1;
+    border-radius: 8px;
+    padding: 4px 9px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #e6a800;
+    margin-top: 8px;
+  }
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.78rem;
+    color: #4285f4;
+    text-decoration: none;
+    margin-top: 8px;
+    margin-left: 8px;
+  }
+  .map-link:hover { text-decoration: underline; }
+
+  /* Notice */
+  .notice {
+    background: #fff8e6;
+    border-left: 3px solid #f0a44a;
+    border-radius: 0 10px 10px 0;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+    color: #7a5a20;
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+
+  /* Birthday special */
+  .birthday-banner {
+    background: linear-gradient(135deg, #f9e4f0 0%, #e8eafb 100%);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0;
+  }
+  .birthday-banner .emoji { font-size: 2.2rem; display: block; margin-bottom: 6px; }
+  .birthday-banner h3 { font-size: 1.1rem; font-weight: 800; color: #6b3fa0; }
+  .birthday-banner p { font-size: 0.84rem; color: #888; margin-top: 4px; }
+
+  /* Tag */
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .tag {
+    background: #f0f7ff;
+    color: #4a85d0;
+    font-size: 0.73rem;
+    padding: 3px 9px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  .tag.green { background: #f0faf4; color: #3a9060; }
+  .tag.pink { background: #fff0f6; color: #c0408a; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 30px 20px 10px;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+  .footer span { display: block; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1400&q=85"
+       alt="Kyoto cherry blossoms"
+       onerror="this.src='https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1400&q=85'">
+  <div class="hero-overlay">
+    <h1>🌸 京都五日慶生之旅</h1>
+    <p>4/26 – 4/30 ｜ 8人同行 ｜ 雙壽星快樂</p>
+  </div>
+</div>
+
+<!-- Info bar -->
+<div class="info-bar">
+  <div class="info-item">
+    <div class="label">出發</div>
+    <div class="value">4/26（日）</div>
+  </div>
+  <div class="info-item">
+    <div class="label">返回</div>
+    <div class="value">4/30（四）</div>
+  </div>
+  <div class="info-item">
+    <div class="label">人數</div>
+    <div class="value">8 人</div>
+  </div>
+  <div class="info-item">
+    <div class="label">壽星</div>
+    <div class="value">🎂 × 2</div>
+  </div>
+</div>
+
+<!-- Days -->
+<div class="days">
+
+  <!-- Day 1 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-badge">Day 1</div>
+      <div>
+        <div class="day-title">4/26（日）抵達京都</div>
+        <div class="day-subtitle">放下包袱，先吃再說</div>
+      </div>
+    </div>
+    <img class="day-photo"
+         src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1000&q=80"
+         alt="京都祇園傳統街道">
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-icon">✈️</div>
+        <div class="activity-content">
+          <div class="activity-title">抵達京都・辦理入住</div>
+          <div class="activity-desc">落地、check in、放包包、喘口氣。今天的任務只有一個——好好吃頓開場晚餐！</div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-icon">🍜</div>
+        <div class="activity-content">
+          <div class="activity-time">晚餐 18:30 / 19:00</div>
+          <div class="restaurant-card">
+            <div class="restaurant-name">Nishiki Market Alley by MOON and BACK</div>
+            <img class="restaurant-photo"
+                 src="https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?auto=format&fit=crop&w=800&q=80"
+                 alt="Ramen">
+            <div class="chef-badge">👨‍🍳 主廚 福田達也（Tatsuya Fukuda）</div>
+            <div class="restaurant-desc">
+              大阪出身，16 歲起修習懷石料理，28 歲成為雪梨歌劇院旁高級日料主廚，在澳洲征戰 7 年。被雪梨媒體稱為「日本最受好評的拉麵主廚」，帶著國際經驗回京都創立 MOON and BACK。<br><br>
+              核心理念「包容性飲食」——不管你吃肉、純素還是有過敏，大家可以坐在同一桌吃得開心。
+            </div>
+            <div class="menu-item"><span class="menu-name">🥩 黑毛和牛炙燒拉麵（京都限定！桌邊現炙）</span><span class="menu-price">¥1,848</span></div>
+            <div class="menu-item"><span class="menu-name">純素餃子・燒賣・壽司・天婦羅・布朗尼</span><span class="menu-price">—</span></div>
+            <div class="menu-item"><span class="menu-name">✅ 無麩質麵條可加選</span><span class="menu-price">+¥275</span></div>
+            <div>
+              <span class="rating-badge">⭐ Google 4.7</span>
+              <a class="map-link" href="https://maps.app.goo.gl/yv44ohos2Rh5mc4Q8" target="_blank">📍 Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-badge day2">Day 2</div>
+      <div>
+        <div class="day-title">4/27（一）悠閒漫遊日</div>
+        <div class="day-subtitle">騎腳踏車・散步・寺廟・河邊</div>
+      </div>
+    </div>
+    <img class="day-photo"
+         src="https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?auto=format&fit=crop&w=1000&q=80"
+         alt="Kyoto bicycle">
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-icon">🚲</div>
+        <div class="activity-content">
+          <div class="activity-title">白天自由漫遊</div>
+          <div class="activity-desc">
+            今天沒有硬行程——就是京都最美的那種慢。<br>
+            騎腳踏車沿河邊亂晃、走進某間寺廟發呆、找個地方曬太陽喝咖啡 ☕<br>
+            愛去哪去哪，看心情。
+          </div>
+          <div class="tags">
+            <span class="tag">🚲 腳踏車</span>
+            <span class="tag">⛩️ 寺廟</span>
+            <span class="tag">🌊 河邊</span>
+            <span class="tag">☕ 咖啡</span>
+          </div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-icon">🥬</div>
+        <div class="activity-content">
+          <div class="activity-time">晚餐 20:30</div>
+          <div class="restaurant-card">
+            <div class="restaurant-name">野菜酒場 あしお特</div>
+            <img class="restaurant-photo"
+                 src="https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?auto=format&fit=crop&w=800&q=80"
+                 alt="Japanese vegetables izakaya">
+            <div class="restaurant-desc">
+              「從農田到餐桌」的京野菜居酒屋。用的是京都傳統蔬菜，做的是現代創意料理。喝酒吃菜聊天，近年京都在地人超愛的一間。
+            </div>
+            <div class="tags">
+              <span class="tag green">🥬 京野菜</span>
+              <span class="tag green">🍶 居酒屋風格</span>
+              <span class="tag">Tabelog 推薦</span>
+            </div>
+            <div style="margin-top:8px">
+              <a class="map-link" href="https://maps.google.com/?q=野菜酒場あしお+京都+烏丸" target="_blank">📍 Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 3 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-badge day3">Day 3</div>
+      <div>
+        <div class="day-title">4/28（二）鞍馬山 & 貴船</div>
+        <div class="day-subtitle">走進山裡，感受靈氣</div>
+      </div>
+    </div>
+    <img class="day-photo"
+         src="https://tw.wamazing.com/media/wp-content/uploads/sites/4/2019/07/kuramadera45761228_M.jpg.webp"
+         alt="鞍馬山風景">
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-icon">🏔️</div>
+        <div class="activity-content">
+          <div class="activity-title">鞍馬山・貴船神社</div>
+          <div class="activity-desc">
+            離開市區，往山裡走。<br><br>
+            鞍馬山是傳說中天狗居住的靈山，杉木林道靜謐而神秘。貴船神社以水占卜聞名——把籤紙放進清澈的水中，字跡才會浮現。這條路線春天特別美，邊走邊感受那種「不像人間」的靜謐感 🌿
+          </div>
+          <div class="tags">
+            <span class="tag green">🌲 森林健行</span>
+            <span class="tag">⛩️ 貴船神社</span>
+            <span class="tag pink">💧 水占卜</span>
+            <span class="tag">🚃 叡山電車</span>
+          </div>
+        </div>
+      </div>
+      <div class="activity">
+        <div class="activity-icon">🔥</div>
+        <div class="activity-content">
+          <div class="activity-time">晚餐</div>
+          <div class="restaurant-card">
+            <div class="restaurant-name">Teppan Tavern Tenamonya</div>
+            <div class="restaurant-desc">
+              鐵板料理居酒屋，用餐氣氛輕鬆熱鬧。一邊看師傅在鐵板上大顯身手，一邊配啤酒乾杯，最適合一群人聚餐！
+            </div>
+            <div class="notice">⚠️ 需提前一週預訂，目前確認中——確認後更新！</div>
+            <div style="margin-top:8px">
+              <a class="map-link" href="https://maps.app.goo.gl/vpkjxJeZzFZYhLT99" target="_blank">📍 Google Maps</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-badge day4">Day 4</div>
+      <div>
+        <div class="day-title">4/29（三）嵐山探險 + 慶生夜</div>
+        <div class="day-subtitle">🎂 壽星，今天是你們的日子！</div>
+      </div>
+    </div>
+    <img class="day-photo"
+         src="https://images.unsplash.com/photo-1585442581492-a4f38c1cfc14?q=80&w=1000&auto=format&fit=crop"
+         alt="嵐山觀光小火車櫻花隧道"
+         onerror="this.src='https://images.unsplash.com/photo-1520613291508-01386561f008?auto=format&fit=crop&w=1000&q=80'">
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-icon">🚂</div>
+        <div class="activity-content">
+          <div class="activity-title">嵐山觀光火車 & 保津川漂流</div>
+          <div class="activity-desc">
+            搭乘復古的紅黃色「嵯峨野小火車」穿越溪谷，隨後轉乘傳統木船，由經驗豐富的船夫帶領，在 16 公里的河道中順流而下，感受奇岩峭壁與春櫻交織的絕景。<br><br>
+            結束後可漫步於著名的竹林小徑與天龍寺，享受經典的京都山水洗禮。
+          </div>
+          <div class="notice">💡 備註：這幾天適逢黃金週之前，是熱門時段，需要提前預訂。每人$2320，可以統一一人預訂。</div>
+          <div class="tags">
+            <span class="tag">🚂 觀光小火車</span>
+            <span class="tag blue">🛶 保津川漂流</span>
+            <span class="tag green">🎋 竹林小徑</span>
+          </div>
+          <div style="margin-top:12px">
+            <a class="map-link" href="https://activity.eztravel.com.tw/detail/TKNKL-154891" target="_blank">🔗 體驗行程詳情</a>
+          </div>
+        </div>
+      </div>
+      <!-- 更新後的慶生宴區塊 -->
+      <div class="activity">
+        <div class="activity-icon">🎂</div>
+        <div class="activity-content">
+          <div class="birthday-banner">
+            <span class="emoji">🎉🎂🎊</span>
+            <h3>慶生宴：歐食屋 Kappa (Oshokuya Kappa)</h3>
+            <p>八個人圍在一起團聚，為兩位壽星乾杯 🥂 生日快樂！</p>
+          </div>
+
+          <div class="restaurant-card">
+            <div class="restaurant-name">歐食屋 Kappa (Oshokuya Kappa)</div>
+            <img class="restaurant-photo" 
+                 src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" 
+                 alt="Healthy Italian Restaurant">
+            <div class="chef-badge">🥗 日本野菜品鑑師協會認證</div>
+            <div class="restaurant-desc">
+              位於交通便利的四條烏丸，是一間主打「蔬菜與葡萄酒」的健康取向義大利餐酒館。<br><br>
+              這裡以「令人安心的健康食材」與「超大份量的美味蔬菜」聞名，氛圍輕鬆溫馨且無壓力，非常適合慶生聚會。
+            </div>
+            <div class="tags">
+              <span class="tag green">🥬 健康取向</span>
+              <span class="tag">🍷 義大利餐酒館</span>
+              <span class="tag pink">✨ 四條烏丸附近</span>
+            </div>
+            <div class="notice">📩 備註：目前已發信詢問餐廳預約，正在等待回覆中。</div>
+            <div style="margin-top:8px">
+              <a class="map-link" href="https://www.5kappa.com/dinner.html" target="_blank">🔗 餐廳官網詳情</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 5 -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-badge day5">Day 5</div>
+      <div>
+        <div class="day-title">4/30（四）返家</div>
+        <div class="day-subtitle">帶著滿滿回憶回家</div>
+      </div>
+    </div>
+    <!-- 修復第五天的圖片連結 -->
+    <img class="day-photo"
+         src="https://images.unsplash.com/photo-1526481280693-3bfa756160f3?auto=format&fit=crop&w=1000&q=80"
+         alt="京都賦歸"
+         onerror="this.src='https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1000&q=80'">
+    <div class="day-body">
+      <div class="activity">
+        <div class="activity-icon">✈️</div>
+        <div class="activity-content">
+          <div class="activity-title">賦歸</div>
+          <div class="activity-desc">
+            帶著滿滿的回憶、幾張好照片，還有一點點捨不得，回家。<br><br>
+            <em style="color:#999">下次見，京都 🌸</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <span>🌸 京都五日慶生之旅 · 2026年4月</span>
+  <span>8人同行 · 雙壽星快樂 🎂🎂</span>
+</div>
+
+</body>
+</html>
