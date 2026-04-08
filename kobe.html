@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神戶精品 3 天 2 夜散策提案 - 旗艦雜誌版</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8f5f0;
+            color: #333;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://d1grca2t3zpuug.cloudfront.net/2025/08/20250812kobetop-1920x1280-1754964441.webp') center/cover;
+        }
+        /* 響應式 Timeline 線條 */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            width: 1px;
+            height: 100%;
+            background: #d4c3a1;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+        .map-link {
+            color: #8c7a5d;
+            text-decoration: underline;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 0;
+        }
+        .map-link:hover {
+            color: #5d4d37;
+        }
+        .badge-gold {
+            background-color: #8c7a5d;
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            border-radius: 2px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .transport-tag {
+            background-color: #f1f5f9;
+            color: #8c7a5d;
+            padding: 2px 8px;
+            border-radius: 2px;
+            font-size: 0.65rem;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #e2e8f0;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <header class="relative h-[75vh] flex items-center justify-center text-center text-white hero-gradient">
+        <div class="px-4">
+            <p class="text-sm tracking-[0.5em] mb-4 uppercase text-white/90">Late May 2025 | Kobe v4 Final</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-widest text-white serif text-shadow-md">神戶精品旅程<br><span class="text-2xl md:text-4xl mt-4 block">海風、神戶牛與極致漫活</span></h1>
+            <div class="w-16 h-1 bg-white mx-auto mb-6 shadow-sm"></div>
+            <p class="text-lg md:text-xl font-light italic text-white/95 text-shadow-sm">「掌握每一分優雅，體驗最從容的貴婦散策」</p>
+        </div>
+    </header>
+
+    <!-- TLDR Summary -->
+    <section class="max-w-4xl mx-auto px-6 py-16 -mt-20 relative z-10">
+        <div class="bg-white p-8 md:p-12 shadow-xl rounded-sm border-t-4 border-[#8c7a5d]">
+            <h2 class="text-2xl font-bold mb-6 text-[#5d4d37] border-b pb-4 serif">行程核心摘要</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-sm">
+                <div>
+                    <p class="mb-4 leading-relaxed"><strong class="text-[#8c7a5d]">提前採買：</strong>Day 1 集中完成大丸百貨伴手禮採購，Day 3 徹底解放，專注享受飯店時光與機場專車。</p>
+                    <p class="leading-relaxed"><strong class="text-[#8c7a5d]">極致移動：</strong>入住 ANA 飯店與車站連通。Day 3 採用計程車接駁 UKB 機場，全程零行李負擔。</p>
+                </div>
+                <div class="bg-[#fcf9f2] p-4 rounded border border-[#e8dfcc]">
+                    <h3 class="font-bold mb-2 text-[#5d4d37]">必訪行程重點：</h3>
+                    <ul class="list-disc list-inside space-y-1 text-gray-700">
+                        <li>姬路城：上午 09:15 入門避開人潮</li>
+                        <li>香草園：16:00-18:30 花季與夕陽晚宴</li>
+                        <li>兩大神戶牛：午間平價與晚間極致饗宴</li>
+                        <li>伴手禮：大丸 B1 四樣名物一站購齊</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 1 Details -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-[#5d4d37] serif">Day 1：京都入神 ⧇ 異人建築與採買</h2>
+            
+            <div class="relative timeline-line mb-20">
+                <div class="space-y-20">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">12:30 京都 ➔ 新神戶</h4>
+                            <span class="transport-tag">🚄 新幹線 30min | ¥2,810</span>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">1</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">12:30 抵達入住</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">飯店寄存與啟程</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                車站連通橋 <span class="text-[#8c7a5d] font-bold">步行 1 分鐘</span> 寄行李。13:30 前往三宮（計程車約 ¥1,300）。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">14:00 Steakland Kobe</h4>
+                            <span class="transport-tag">🥩 平價神戶牛午餐</span>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">2</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">午間饗宴</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed mb-4">
+                                在三宮站前享用高 CP 值的神戶牛鐵板燒。¥3,000 起。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">15:30 大丸神戶店</h4>
+                            <span class="badge-gold">四大伴手禮</span>
+                        </div>
+                        <div class="w-10 h-10 bg-[#8c7a5d] border-4 border-white rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-md text-white">🛍️</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">15:30 伴手禮一站式</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                在大丸 B1 掃齊：觀音屋、Morozoff、PRINCE 布丁、風月堂。隨後漫步元町與南京町。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 (Updated with user image) -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">17:30 北野異人館</h4>
+                            <span class="transport-tag">🚶 北野坂散策</span>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">4</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">風見雞與萌黃之館</h4>
+                            <p class="text-gray-600 text-sm mt-1 mb-4 leading-relaxed">
+                                傍晚參觀紅磚建築與異國美學。隨後在三宮最高評價的 Mouriya 享用晚餐。
+                            </p>
+                            <img src="https://d1itvcmfcfl6do.cloudfront.net/2015/04/031.gif" alt="" class="w-full h-44 object-cover rounded-sm shadow-md opacity-90">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 2 Details -->
+    <section class="py-20 bg-[#fcf9f2]">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-[#5d4d37] serif">Day 2：白鷺古城 ⧇ 香草夕陽之巔</h2>
+            
+            <div class="relative timeline-line mb-20">
+                <div class="space-y-24">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">08:45 新神戶 ➔ 姬路</h4>
+                            <span class="transport-tag">🚄 新幹線 17min | ¥1,730</span>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">1</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">09:15 抵達姬路城</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">世界遺產：白鷺城</h4>
+                            <img src="https://resources.matcha-jp.com/resize/720x2000/2025/01/20-220043.webp" alt="" class="w-full h-44 object-cover rounded-sm shadow-md my-3">
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                上午是拍攝白鷺城最美的時刻。參觀天守閣與千姬的好古園。中午享用穴子飯後返回神戶。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">15:00 布引香草園</h4>
+                            <span class="transport-tag">🚠 纜車 15min</span>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">2</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">16:00 初夏花季</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">香草園與山頂夕陽</h4>
+                            <img src="https://www.settour.com.tw/ss_img/poi/20220622/972d1242-5b0d-45b7-b22c-7428f06d2cbd.jpg" alt="" class="w-full h-48 object-cover rounded-sm shadow-md my-3">
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                漫步 5 月底最美的玫瑰與薰衣草園。傍晚在展望台欣賞神戶黃金夕陽。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">19:00 神戶牛晚宴</h4>
+                            <span class="badge-gold">必預約</span>
+                        </div>
+                        <div class="w-10 h-10 bg-[#8c7a5d] border-4 border-white rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-md text-white">🥩</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">19:00 頂級鐵板燒</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">神戸プレジール</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                享用極致和風鐵板燒會席。餐後前往神戶港 Mosaic 廣場欣賞港灣塔夜景。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 3 Details -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-[#5d4d37] serif">Day 3：優雅放鬆 ⧇ 返台歸途</h2>
+            
+            <div class="relative timeline-line">
+                <div class="space-y-24">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">08:00 悠閒慢活</h4>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">1</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">飯店早餐時光</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                在飯店慢慢享用早餐。09:30 於樓下商場喝杯最後的神戶咖啡，補買漏掉的小物件。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">11:00 辦理退房</h4>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">2</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">退房與寄存</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                正式退房。確保前一晚已預訂好 11:45 的計程車直達機場。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">11:45 ➔ UKB 機場</h4>
+                            <span class="transport-tag">🚕 Taxi 25min | ¥4,500</span>
+                        </div>
+                        <div class="w-10 h-10 bg-[#8c7a5d] border-4 border-white rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-md text-white">✈️</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">直達機場報到</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                                不拉行李，優雅抵達 UKB 機場。12:30 完成報到安檢，準時搭乘 13:30 航班返家。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Spotlight - ALL 5 RESTAURANTS -->
+    <section class="py-20 bg-[#eef0e9]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-3 text-[#5d4d37] serif border-b-2 border-white inline-block pb-2">嚴選美食戰力榜</h2>
+                <p class="text-gray-500 font-light italic">5 大名店詳細資訊</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-sm">
+                <!-- 1. Steakland -->
+                <div class="bg-white p-6 rounded shadow-sm border border-[#e8dfcc] card-hover">
+                    <h4 class="font-bold text-[#5d4d37] text-lg mb-2">Steakland Kobe</h4>
+                    <p class="text-[#8c7a5d] font-bold italic mb-2">⭐ 4.0 (9213) | Day 1 午餐</p>
+                    <p class="text-gray-600 mb-4">平價鐵板燒首選，不需預約但常需排隊。¥3,000 起。</p>
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJVVUFoeSOAGAR4_Sbxs2rOzs" target="_blank" class="map-link">📍 地圖位置連結</a>
+                </div>
+
+                <!-- 2. Mouriya -->
+                <div class="bg-white p-6 rounded shadow-sm border border-[#e8dfcc] card-hover">
+                    <h4 class="font-bold text-[#5d4d37] text-lg mb-2">Mouriya 三宮本店</h4>
+                    <p class="text-[#8c7a5d] font-bold italic mb-2">⭐ 4.6 (1741) | Day 1 晚餐</p>
+                    <p class="text-gray-600 mb-4">評價最高的神戶牛。環境優雅，肉質絕佳。建議預約。</p>
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJIRBfZuOOAGAROCutFua_i7o" target="_blank" class="map-link">📍 地圖位置連結</a>
+                </div>
+
+                <!-- 3. Kobe Plaisir -->
+                <div class="bg-white p-6 rounded shadow-sm border border-[#e8dfcc] card-hover border-t-4 border-[#8c7a5d]">
+                    <h4 class="font-bold text-[#5d4d37] text-lg mb-2">神戸プレジール</h4>
+                    <p class="text-[#8c7a5d] font-bold italic mb-2">⭐ 4.3 (702) | Day 2 晚餐</p>
+                    <p class="text-gray-600 mb-4 underline decoration-red-400">極致質感鐵板燒。需提前預約。¥10,000–18,000。</p>
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJ4chXCeOOAGARijPfq6oSJFQ" target="_blank" class="map-link">📍 地圖位置連結</a>
+                </div>
+
+                <!-- 4. PATISSERIE MONT PLUS -->
+                <div class="bg-white p-6 rounded shadow-sm border border-[#e8dfcc] card-hover">
+                    <h4 class="font-bold text-[#5d4d37] text-lg mb-2">MONT PLUS</h4>
+                    <p class="text-[#8c7a5d] font-bold italic mb-2">⭐ 4.3 (514) | 下午茶</p>
+                    <p class="text-gray-600 mb-4">法式甜點名店，蛋糕細緻美味。元町散策後的歇腳首選。</p>
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJS9AVCgKPAGARUMcF-5P3mrk" target="_blank" class="map-link">📍 地圖位置連結</a>
+                </div>
+
+                <!-- 5. Nishimura Coffee -->
+                <div class="bg-white p-6 rounded shadow-sm border border-[#e8dfcc] card-hover">
+                    <h4 class="font-bold text-[#5d4d37] text-lg mb-2">西村珈琲 北野坂店</h4>
+                    <p class="text-[#8c7a5d] font-bold italic mb-2">⭐ 4.5 (1061) | 異人館順路</p>
+                    <p class="text-gray-600 mb-4">老派優雅代表。古董家具與手沖醇香，散策間的最佳憩點。</p>
+                    <a href="https://www.google.com/maps/place/?q=place_id:ChIJc4BLKOGOAGARW52IpC_0edg" target="_blank" class="map-link">📍 地圖位置連結</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklist & Budget -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Checklist -->
+                <div class="bg-[#fcf9f2] p-8 border border-[#e8dfcc]">
+                    <h2 class="text-xl font-bold mb-6 text-[#5d4d37] serif border-b border-[#d4c3a1] pb-2">📋 行前 checklist</h2>
+                    <ul class="space-y-4 text-xs text-gray-700">
+                        <li class="flex gap-2"><span>☑️</span><span>ANA Crowne Plaza 住宿兩晚訂妥</span></li>
+                        <li class="flex gap-2"><span>☑️</span><span>新幹線指定席 5/24 12:30 定妥</span></li>
+                        <li class="flex gap-2"><span>☑️</span><span>神戸プレジール 5/25 19:00 完成預約</span></li>
+                        <li class="flex gap-2"><span>☑️</span><span>5/25 晚請櫃檯預約隔日專車</span></li>
+                        <li class="flex gap-2"><span>☑️</span><span>準備好走的平底鞋 (石板路多)</span></li>
+                    </ul>
+                </div>
+                <!-- Budget -->
+                <div class="bg-white p-8 border border-[#e8dfcc]">
+                    <h2 class="text-xl font-bold mb-6 text-[#5d4d37] serif border-b border-[#d4c3a1] pb-2">💰 預算概算 (雙人)</h2>
+                    <table class="w-full text-xs text-gray-700">
+                        <tbody class="divide-y divide-slate-100">
+                            <tr><td class="py-2">住宿兩晚</td><td class="py-2 text-right">¥60,000+</td></tr>
+                            <tr><td class="py-2">雙神戶牛餐費</td><td class="py-2 text-right">¥50,000+</td></tr>
+                            <tr><td class="py-2">交通費 (含新幹線+專車)</td><td class="py-2 text-right">¥20,000+</td></tr>
+                            <tr><td class="py-2">伴手禮與門票預留</td><td class="py-2 text-right">¥40,000+</td></tr>
+                            <tr class="font-bold text-[#5d4d37]">
+                                <td class="py-3 uppercase">合計估計</td>
+                                <td class="py-3 text-right">約 ¥170,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="text-[10px] text-gray-400 mt-4 italic">約合台幣 NTD 35,000 (視匯率調整)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 text-center bg-[#f8f5f0] border-t border-[#e8dfcc]">
+        <p class="text-gray-400 text-xs tracking-widest uppercase mb-2">Designed for</p>
+        <p class="text-[#8c7a5d] serif text-lg font-bold uppercase tracking-widest">Kobe Premium Retreat 2025</p>
+        <div class="w-12 h-[1px] bg-[#d4c3a1] mx-auto my-6"></div>
+        <p class="text-[10px] text-gray-400 px-6 leading-relaxed">
+            全三日時間軸化 | 伴手禮預先完成 | 交通零行李方案 | 旗艦雜誌版 v10
+        </p>
+    </footer>
+
+</body>
+</html>
