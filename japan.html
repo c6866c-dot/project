@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>丹波篠山 NIPPONIA 貴婦媽媽散策提案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8f5f0;
+            color: #333;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.sasayamastay.jp/wp2025/wp-content/themes/sasayamastay/images/home/history-img03.jpg') center/cover;
+        }
+        /* 響應式 Timeline 線條 */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            width: 2px;
+            height: 100%;
+            background: #d4c3a1;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .map-link {
+            color: #8c7a5d;
+            text-decoration: underline;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 0;
+        }
+        .map-link:hover {
+            color: #5d4d37;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <header class="relative h-[70vh] flex items-center justify-center text-center text-white hero-gradient">
+        <div class="px-4">
+            <p class="text-sm tracking-[0.5em] mb-4 uppercase text-white/90">Late May 2026</p>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-widest text-white">丹波篠山 NIPPONIA<br><span class="text-2xl md:text-4xl mt-4 block">貴婦媽媽散策提案</span></h1>
+            <div class="w-16 h-1 bg-white mx-auto mb-6 shadow-sm"></div>
+            <p class="text-lg md:text-xl font-light italic text-white/95">「住進時光裡，品味古民家的慢活美學」</p>
+        </div>
+    </header>
+
+    <!-- TLDR Summary -->
+    <section class="max-w-4xl mx-auto px-6 py-16 -mt-20 relative z-10">
+        <div class="bg-white p-8 md:p-12 shadow-xl rounded-sm border-t-4 border-[#8c7a5d]">
+            <h2 class="text-2xl font-bold mb-6 text-[#5d4d37] border-b pb-4">行程核心摘要</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <p class="mb-4 leading-relaxed"><strong class="text-[#8c7a5d]">建議兩晚：</strong>NIPPONIA 是分散式古民家飯店，住宿本身就是最大的體驗，住一晚太可惜。</p>
+                    <p class="leading-relaxed"><strong class="text-[#8c7a5d]">氣候提示：</strong>5月底白天約 23–27°C，石板路漫步時請備好防曬與薄外套。</p>
+                </div>
+                <div class="bg-[#fcf9f2] p-4 rounded border border-[#e8dfcc]">
+                    <h3 class="font-bold mb-2 text-[#5d4d37]">最不能錯過：</h3>
+                    <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+                        <li>KAWARANO 或 YOMENA 棟住宿</li>
+                        <li>LE UN 法式會席晚餐</li>
+                        <li>河原町妻入商家街選物散步</li>
+                        <li>工藝尋寶（立杭燒或王地山燒）</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Spotlight -->
+    <section class="py-16 bg-[#eef0e9]">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2 text-[#5d4d37]">入住古民家</h2>
+                <p class="text-gray-600 mb-2 font-light">NIPPONIA 笹山城下町：7 棟、18 間房的精緻體驗</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=篠山城下町ホテル+NIPPONIA" target="_blank" class="map-link">📍 查看飯店位置 (ONAE 前台)</a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- KAWARANO -->
+                <div class="bg-white overflow-hidden shadow-lg card-hover rounded-sm">
+                    <img src="https://www.sasayamastay.jp/wp2025/wp-content/uploads/2025/11/slider03-4.jpg" alt="KAWARANO 棟" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#5d4d37]">KAWARANO 棟 (河原町長屋)</h3>
+                        <p class="text-sm text-[#8c7a5d] mb-4 italic">出門就是商店街，最方便逛</p>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                            位於河原町妻入商家街旁，可選設有<strong>檜木風呂</strong>的房型。非常適合愛逛街的媽媽，隨時可以回房休息。
+                        </p>
+                        <span class="inline-block bg-[#8c7a5d] text-white text-xs px-3 py-1 uppercase tracking-tighter rounded-sm">購物首選</span>
+                    </div>
+                </div>
+                <!-- YOMENA -->
+                <div class="bg-white overflow-hidden shadow-lg card-hover rounded-sm">
+                    <img src="https://www.sasayamastay.jp/wp2025/wp-content/uploads/2025/11/slider01-2.jpg" alt="YOMENA 棟" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#5d4d37]">YOMENA 棟 (獨棟)</h3>
+                        <p class="text-sm text-[#8c7a5d] mb-4 italic">隱私度最高，附專屬檜木風呂</p>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                            完全包棟設計，提供最私密的奢華空間。最適合想徹底放空、在廊下喝茶聊天、享受寧靜時光的媽媽。
+                        </p>
+                        <span class="inline-block bg-[#4a5d4e] text-white text-xs px-3 py-1 uppercase tracking-tighter rounded-sm">放鬆首選</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itinerary Timeline -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-[#5d4d37]">三日貴婦散策行程</h2>
+
+            <!-- Day 1 -->
+            <div class="relative timeline-line mb-20">
+                <div class="mb-12 relative flex justify-start md:justify-center">
+                    <div class="ml-10 md:ml-0 bg-[#8c7a5d] text-white px-6 py-1 rounded-full text-lg font-bold z-10 shadow-sm">Day 1：抵達與韻味</div>
+                </div>
+                
+                <div class="space-y-12">
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">10:30 抵達城下町</h4>
+                            <p class="text-gray-500 text-sm">寄放行李於前台，開啟散策模式。</p>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">1</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">10:30 抵達城下町</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">河原町妻入商家群</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=河原町妻入商家群+丹波篠山" target="_blank" class="map-link">📍 Google Map 導航</a>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">漫步16世紀老街，造訪選物店、古民家咖啡與手工醬油店。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">12:00 山里料理 まえ川</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=山里料理+まえ川+丹波篠山" target="_blank" class="map-link">📍 餐廳位置</a>
+                            <p class="text-gray-500 text-sm mt-1">品嚐主廚精心烹調的鄉土料理會席。</p>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">2</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">12:00 山里料理 まえ川</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">15:00 入住休息</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">正式 check-in。入房泡檜木風呂，享受 NIPPONIA 的午後安寧。</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">18:30 LE UN 法式會席</h4>
+                            <p class="text-gray-500 text-sm">位於 ONAE 主屋內。</p>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">3</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">18:30 LE UN 法式會席</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">LE UN 極致饗宴</h4>
+                            <p class="text-gray-600 text-sm mt-1 mb-3 leading-relaxed">丹波牛與在地食材的法式變奏。餐後可在星空下散步回房。</p>
+                            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=400" alt="高級法式會席料理" class="w-full h-32 object-cover rounded shadow-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="relative timeline-line mb-20">
+                <div class="mb-12 relative flex justify-start md:justify-center">
+                    <div class="ml-10 md:ml-0 bg-[#4a5d4e] text-white px-6 py-1 rounded-full text-lg font-bold z-10 shadow-sm">Day 2：文化與工藝</div>
+                </div>
+                <div class="space-y-12">
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">09:00 城跡與美術館</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=篠山城大書院" target="_blank" class="map-link">📍 篠山城跡</a>
+                            <p class="text-gray-500 text-sm">大書院與歷史美術館巡禮。</p>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">1</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">09:00 城跡與美術館</h4>
+                            <h4 class="font-bold text-lg text-[#5d4d37]">11:30 武家屋敷抹茶</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=武家屋敷安間家史料館" target="_blank" class="map-link">📍 安間家史料館</a>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">參觀江戶時代建築，體驗抹茶，感受平靜的力量。</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">15:00 下午選擇方案</h4>
+                            <p class="text-gray-500 text-sm italic leading-relaxed">體力彈性二選一，探索丹波之美。</p>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">2</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <h4 class="font-bold text-lg md:hidden text-[#5d4d37]">15:00 下午方案</h4>
+                            <div class="bg-[#fcf9f2] p-4 rounded border border-[#d4c3a1] mb-4">
+                                <h5 class="font-bold text-[#8c7a5d] mb-1 italic">方案 A：立杭燒陶藝村</h5>
+                                <p class="text-xs text-gray-600 mb-2 leading-relaxed">深入日本六古窯。建議預約計程車往返 (約30分)。</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=丹波伝統工芸公園+立杭+陶の郷" target="_blank" class="map-link">📍 開啟陶之鄉導航</a>
+                            </div>
+                            <div class="bg-white p-4 rounded border border-[#e8dfcc] shadow-sm">
+                                <h5 class="font-bold text-[#4a5d4e] mb-1 italic text-sm">備案：王地山陶瓷之村</h5>
+                                <p class="text-xs text-gray-600 mb-2 leading-relaxed">步行可達，觀賞優雅的「夢幻青瓷」復興工房。</p>
+                                <a href="https://www.google.com/maps/search/?api=1&query=王地山陶瓷之村" target="_blank" class="map-link">📍 查看地圖位置</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="relative timeline-line">
+                <div class="mb-12 relative flex justify-start md:justify-center">
+                    <div class="ml-10 md:ml-0 bg-[#6d5b45] text-white px-6 py-1 rounded-full text-lg font-bold z-10 shadow-sm">Day 3：神社散策與甜點</div>
+                </div>
+                <div class="space-y-12">
+                    <!-- Day 3 - Item 1 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">10:00 王地山稻荷神社</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=王地山まけきらい稻荷" target="_blank" class="map-link">📍 神社導覽</a>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">1</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <!-- 手機版顯示原本左側資訊 -->
+                            <div class="md:hidden mb-4 pb-4 border-b border-[#f0e6d2]">
+                                <h4 class="font-bold text-lg text-[#5d4d37]">10:00 王地山稻荷神社</h4>
+                                <a href="https://www.google.com/maps/search/?api=1&query=王地山まけきらい稻荷" target="_blank" class="map-link">📍 神社導覽</a>
+                                <p class="text-gray-600 text-sm mt-1 leading-relaxed">漫步於 50 座靜謐的紅鳥居，拍攝最美紀念照。</p>
+                            </div>
+                            
+                            <h4 class="font-bold text-lg text-[#5d4d37]">12:30 寶魚園午餐</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=活魚割烹+宝魚園+丹波篠山" target="_blank" class="map-link">📍 餐廳地圖</a>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">在50年老店享用精緻和食籃套餐，輕盈爽口。</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 3 - Item 2 -->
+                    <div class="flex flex-row items-start gap-6 md:gap-0">
+                        <div class="hidden md:block md:w-1/2 text-right pr-12 pt-2">
+                            <h4 class="font-bold text-lg text-[#5d4d37]">14:30 中島大祥堂</h4>
+                            <a href="https://www.google.com/maps/search/?api=1&query=中島大祥堂+丹波本店" target="_blank" class="map-link">📍 甜點導航</a>
+                        </div>
+                        <div class="w-10 h-10 bg-white border-4 border-[#d4c3a1] rounded-full z-10 flex items-center justify-center shrink-0 text-sm font-bold shadow-sm">2</div>
+                        <div class="md:w-1/2 md:pl-12 pt-2">
+                            <!-- 手機版顯示原本左側資訊 -->
+                            <div class="md:hidden mb-4 pb-4 border-b border-[#f0e6d2]">
+                                <h4 class="font-bold text-lg text-[#5d4d37]">14:30 中島大祥堂</h4>
+                                <a href="https://www.google.com/maps/search/?api=1&query=中島大祥堂+丹波本店" target="_blank" class="map-link">📍 甜點導航</a>
+                            </div>
+
+                            <h4 class="font-bold text-lg text-[#5d4d37]">完美的句點</h4>
+                            <p class="text-gray-600 text-sm mt-1 leading-relaxed">於 150 年茅草屋古蹟中享用丹波栗蒙布朗，購買黑豆伴手禮後，由接駁車或計程車送往車站踏上歸途。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shuttle Info -->
+    <section class="max-w-4xl mx-auto px-6 py-16 mb-16 bg-[#faf7f2] border border-[#e8dfcc] rounded-lg shadow-sm">
+        <h2 class="text-2xl font-bold mb-4 text-center text-[#5d4d37] serif">JR 笹山口站免費接駁資訊</h2>
+        <div class="text-center mb-8">
+            <a href="https://www.google.com/maps/search/?api=1&query=JR+篠山口駅" target="_blank" class="map-link font-bold">📍 查看 JR 篠山口站位置</a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="space-y-4">
+                <h3 class="font-bold text-[#8c7a5d] border-l-4 border-[#8c7a5d] pl-3 italic">接駁車時刻表</h3>
+                <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-white p-4 rounded shadow-sm border border-[#e8dfcc]">
+                        <p class="text-gray-500 mb-1 text-xs uppercase tracking-wider">去程 (往飯店)</p>
+                        <p class="text-xl font-bold text-[#5d4d37]">14:30 / 16:30</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border border-[#e8dfcc]">
+                        <p class="text-gray-500 mb-1 text-xs uppercase tracking-wider">回程 (往車站)</p>
+                        <p class="text-xl font-bold text-[#5d4d37]">10:15 / 14:00</p>
+                    </div>
+                </div>
+                <div class="text-sm text-gray-600 bg-white p-4 rounded border border-dashed border-[#d4c3a1]">
+                    <p class="font-bold mb-2">📍 等候地點：</p>
+                    <p class="leading-relaxed">抵達「笹山口站」後，請前往<strong>檢票口出口左側的候車區</strong>等候。工作人員會持 NIPPONIA 標誌接待。</p>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h3 class="font-bold text-[#8c7a5d] border-l-4 border-[#8c7a5d] pl-3 italic">預約方式與提醒</h3>
+                <ul class="text-sm space-y-3 text-gray-700 list-disc list-inside leading-relaxed">
+                    <li><strong>預約期限：</strong>最晚於<span class="text-red-700 font-bold underline">前一天晚上 8 點前</span>向飯店預約。</li>
+                    <li><strong>共享服務：</strong>接駁車由多個團體共享，請務必準時抵達候車點。</li>
+                    <li>由於飯店建築分散，請準時抵達前台以便接續安排入房手續。</li>
+                    <li>若搭乘計程車前往約需 15 分鐘，費用預計約 ¥2,500。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Gallery -->
+    <section class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 border-b-2 border-[#f8f5f0] pb-4 text-[#5d4d37]">味覺清單</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- 丹波牛 -->
+                <div class="group relative overflow-hidden h-48 rounded shadow-sm">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTswZx8Z6ROt1501uAxIXdvdMPKxX8TYKOZTg&s" alt="丹波牛" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg">丹波牛</span>
+                    </div>
+                </div>
+                <!-- 丹波黑豆 -->
+                <div class="group relative overflow-hidden h-48 rounded shadow-sm">
+                    <img src="https://www.sasayamastay.jp/wp2025/wp-content/themes/sasayamastay/images/home/history-img01.jpg" alt="丹波黑豆" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg">丹波黑豆</span>
+                    </div>
+                </div>
+                <!-- 蒙布朗 -->
+                <div class="group relative overflow-hidden h-48 rounded shadow-sm">
+                    <img src="https://svcstrg.cld.navitime.jp/travelguide/p28040033/p28040033_01.jpg" alt="蒙布朗" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg">栗子蒙布朗</span>
+                    </div>
+                </div>
+                <!-- 和風定食 -->
+                <div class="group relative overflow-hidden h-48 rounded shadow-sm">
+                    <img src="https://resources.matcha-jp.com/resize/720x2000/2023/10/19-149598.webp" alt="和風定食" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-lg">和風定食</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 grid md:grid-cols-2 gap-8 text-sm">
+                <div class="bg-[#fcf9f2] p-8 rounded shadow-sm">
+                    <h3 class="font-bold text-lg mb-6 text-[#8c7a5d] border-b pb-2 italic">精選餐廳導航</h3>
+                    <ul class="space-y-5">
+                        <li class="flex justify-between items-center">
+                            <span><strong>LE UN (ル・ユン)</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=LE+UN+篠山城下町+NIPPONIA" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                        <li class="flex justify-between items-center border-t border-[#e8dfcc] pt-4">
+                            <span><strong>山里料理 Maeakawa (まえ川)</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=山里料理+まえ川+丹波篠山" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                        <li class="flex justify-between items-center border-t border-[#e8dfcc] pt-4">
+                            <span><strong>小田垣豆堂 Cafe</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=小田垣豆堂+丹波篠山" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                        <li class="flex justify-between items-center border-t border-[#e8dfcc] pt-4">
+                            <span><strong>中島大祥堂 丹波本店</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=中島大祥堂+丹波本店" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-[#eef0e9] p-8 rounded shadow-sm">
+                    <h3 class="font-bold text-lg mb-6 text-[#4a5d4e] border-b pb-2 italic">必逛店家導航</h3>
+                    <ul class="space-y-5">
+                        <li class="flex justify-between items-center">
+                            <span><strong>小田垣商店 (黑豆專賣)</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=小田垣商店+丹波篠山" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                        <li class="flex justify-between items-center border-t border-[#d4c3a1] pt-4">
+                            <span><strong>鳳鳴酒造 ほろ酔い城下蔵</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=鳳鳴酒造+ほろ酔い城下蔵" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                        <li class="flex justify-between items-center border-t border-[#d4c3a1] pt-4">
+                            <span><strong>王地山陶瓷之村</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=王地山陶瓷之村" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                        <li class="flex justify-between items-center border-t border-[#d4c3a1] pt-4">
+                            <span><strong>一陽来復 (黑豆大福)</strong></span>
+                            <a href="https://www.google.com/maps/search/?api=1&query=一陽来復+丹波篠山" target="_blank" class="map-link">📍 導航</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Tips -->
+    <section class="py-16 bg-[#333] text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-8 italic">給貴婦媽媽的小提醒</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+                <div class="flex flex-col items-center">
+                    <div class="mb-3 text-3xl">👟</div>
+                    <p class="leading-relaxed font-light">城跡石板路多，請穿好走的平底鞋。</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="mb-3 text-3xl">💵</div>
+                    <p class="leading-relaxed font-light">老街店鋪多收現金，請備妥充足日幣。</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="mb-3 text-3xl">👒</div>
+                    <p class="leading-relaxed font-light">5月陽光漸強，請準備遮陽帽與折傘。</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="mb-3 text-3xl">📅</div>
+                    <p class="leading-relaxed font-light text-white/90">餐廳位子極少，務必提前 6-8 週預訂。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 text-center bg-[#f8f5f0] border-t border-[#e8dfcc]">
+        <p class="text-gray-400 text-xs tracking-widest uppercase mb-2">Designed for</p>
+        <p class="text-[#8c7a5d] serif text-lg font-bold">2026 Tanba Sasayama Retreat</p>
+    </footer>
+
+</body>
+</html>
