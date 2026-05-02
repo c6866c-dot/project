@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan Exploration: A 4-Day Journey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        /* 首圖背景圖片 - 使用使用者提供的台北 101 代表性圖源 */
+        .hero-bg {
+            background-color: #1a1a1a;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+                              url('https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-142820705.jpg?c=16x9&q=h_438,w_780,c_fill');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        .img-container {
+            background-color: #f3f4f6;
+            overflow: hidden;
+            position: relative;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-800">
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center hero-bg text-white">
+        <div class="text-center px-4 max-w-4xl">
+            <p class="uppercase tracking-[0.3em] text-sm mb-6 serif italic opacity-90">A Curated Experience for Reagan</p>
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 serif leading-tight drop-shadow-lg">Taiwan Exploration</h1>
+            <p class="text-xl md:text-2xl font-light tracking-widest opacity-90 mb-12 drop-shadow-md">A 4-Day Journey of Nature & Culture</p>
+            
+            <div class="animate-bounce">
+                <a href="#overview" class="inline-block p-3 border border-white/50 rounded-full hover:bg-white hover:text-stone-800 transition-colors backdrop-blur-sm">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7-7-7m14-8l-7 7-7-7"></path></svg>
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-4 right-6 text-[10px] opacity-30 uppercase tracking-widest">Taipei 101 & Cityscape</div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section-padding max-w-5xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl serif mb-4">Trip Overview</h2>
+        <p class="text-stone-400 mb-12 italic serif">行程總覽</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-y border-stone-200 py-16">
+            <div class="space-y-2">
+                <p class="text-stone-400 text-xs uppercase tracking-[0.2em]">Dates</p>
+                <p class="text-lg font-medium">June 13 – 16, 2026</p>
+            </div>
+            <div class="space-y-2">
+                <p class="text-stone-400 text-xs uppercase tracking-[0.2em]">Base Location</p>
+                <p class="text-lg font-medium">Taichung City [台中市]</p>
+            </div>
+            <div class="space-y-2">
+                <p class="text-stone-400 text-xs uppercase tracking-[0.2em]">Theme</p>
+                <p class="text-lg font-medium">Serenity & Heritage</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 1 -->
+    <section class="section-padding bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-start">
+                <div class="md:w-1/3">
+                    <span class="text-7xl font-bold text-stone-100 serif block leading-none">01</span>
+                    <h3 class="text-4xl font-bold mt-4 serif">Saturday, June 13</h3>
+                    <p class="text-xl text-stone-400 italic serif mt-2">Welcome & Recharge</p>
+                    
+                    <div class="mt-8 overflow-hidden rounded-2xl shadow-xl img-container">
+                        <img src="https://tlife.thsrc.com.tw/s3/post/20250326-itqcpkRyqo5OcyCKnSp7nXLLliWOb8Zv76CndXPQ.jpg" alt="Relaxing Vibe in Taichung" class="w-full h-auto transform hover:scale-110 transition-transform duration-700">
+                    </div>
+
+                    <div class="mt-10 p-6 bg-stone-50 border-l-2 border-stone-800">
+                        <p class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-2">Arrival 接機</p>
+                        <p class="text-sm font-medium leading-relaxed">05:40 AM @ Taoyuan International Airport (TPE) Terminal 2 [桃園國際機場 第二航廈]</p>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-xl leading-relaxed mb-12 font-light text-stone-600">Recover from the long-haul flight with a focus on physical wellness. We have two options for your first day in Taiwan:</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Option 1 -->
+                        <div class="group border border-stone-100 p-10 rounded-2xl bg-stone-50 card-hover">
+                            <span class="bg-stone-800 text-white text-[10px] px-3 py-1 uppercase tracking-widest rounded-full mb-6 inline-block">Option 1</span>
+                            <h4 class="text-2xl font-bold mb-6 serif">Taichung Slow-Life</h4>
+                            <p class="text-stone-400 text-xs mb-6 uppercase tracking-widest italic">[台中慢活]</p>
+                            <ul class="space-y-4 text-stone-600 text-sm">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> Traditional Breakfast</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> HSR directly to Taichung</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> Massage or something relaxing</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> Hotel Check-in</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> Rest & Exploring Taichung</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-300 rounded-full mr-3"></span> Refined Local Dinner</li>
+                            </ul>
+                        </div>
+                        <!-- Option 2 -->
+                        <div class="group border border-stone-100 p-10 rounded-2xl bg-white card-hover">
+                            <span class="bg-stone-300 text-white text-[10px] px-3 py-1 uppercase tracking-widest rounded-full mb-6 inline-block">Option 2</span>
+                            <h4 class="text-2xl font-bold mb-6 serif">Taipei 101 Quick Look</h4>
+                            <p class="text-stone-400 text-xs mb-6 uppercase tracking-widest italic">[台北快閃]</p>
+                            <ul class="space-y-4 text-stone-600 text-sm">
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-200 rounded-full mr-3"></span> Traditional Breakfast</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-200 rounded-full mr-3"></span> Express Train to Taipei City</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-200 rounded-full mr-3"></span> Visit iconic Taipei 101</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-200 rounded-full mr-3"></span> Thai massage in Da'an district</li>
+                                <li class="flex items-center"><span class="w-1.5 h-1.5 bg-stone-200 rounded-full mr-3"></span> Evening HSR to Taichung Base</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 2 -->
+    <section class="section-padding bg-stone-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row-reverse gap-16 items-start">
+                <div class="md:w-5/12">
+                    <span class="text-7xl font-bold text-stone-200 serif block leading-none">02</span>
+                    <h3 class="text-4xl font-bold mt-4 serif">Sunday, June 14</h3>
+                    <p class="text-xl text-stone-400 italic serif mt-2">The Emerald Lake</p>
+                    <div class="mt-12 overflow-hidden rounded-2xl shadow-2xl img-container">
+                        <img src="https://image.kkday.com/v2/image/get/s1.kkday.com/product_12798/20250123100152_KvLgp/jpg" alt="Sun Moon Lake Panoramic View" class="w-full h-auto transform hover:scale-110 transition-transform duration-700">
+                    </div>
+                </div>
+                <div class="md:w-7/12">
+                    <h4 class="text-3xl serif mb-6">Sun Moon Lake [日月潭]</h4>
+                    <p class="text-xl mb-12 text-stone-600 font-light leading-relaxed">Experience the ethereal beauty of Taiwan's premier alpine lake. A perfect blend of activity and quiet contemplation.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-12 gap-x-8">
+                        <div class="flex gap-6">
+                            <div class="text-3xl opacity-50">🚲</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1 serif italic">The Scenic Ride</h5>
+                                <p class="text-stone-500 text-sm">Cycling the global top-10 "Shuishe-Xiangshan" path.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl opacity-50">⛩️</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1 serif italic">Sacred Views</h5>
+                                <p class="text-stone-500 text-sm">Wenwu Temple [文武廟] for stunning lake panoramas.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl opacity-50">🪂</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1 serif italic">Aerial Adventure</h5>
+                                <p class="text-stone-500 text-sm">Optional: Paragliding over Puli [埔里飛行傘] for the thrill-seekers.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-3xl opacity-50">🍵</div>
+                            <div>
+                                <h5 class="font-bold text-lg mb-1 serif italic">Timeless Tea</h5>
+                                <p class="text-stone-500 text-sm">Visit the historic Sun Moon Old Tea Factory [日月老茶廠].</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Rain Backup -->
+                    <div class="mt-16 p-8 bg-white/50 backdrop-blur rounded-2xl border border-white flex items-start gap-6">
+                        <span class="text-3xl">☔</span>
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-widest text-stone-400 mb-2">Rainy Day Backup 雨天備案</p>
+                            <p class="text-stone-700 font-medium italic">Chung Tai Chan Monastery [中台禪寺]</p>
+                            <p class="text-stone-500 text-sm mt-2">An architectural masterpiece combining modern geometry with Buddhist tranquility. One of the largest monasteries in the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 3 -->
+    <section class="section-padding bg-white overflow-hidden">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-7xl font-bold text-stone-100 serif block leading-none">03</span>
+                <h3 class="text-4xl font-bold mt-4 serif text-stone-800">Monday, June 15</h3>
+                <p class="text-xl text-stone-400 italic serif mt-2">Mountain Giants or Ancient Soul</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <!-- Alishan Card -->
+                <div class="group flex flex-col rounded-3xl overflow-hidden bg-stone-50 border border-stone-100 card-hover">
+                    <div class="relative h-80 overflow-hidden img-container">
+                        <img src="https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=1000&q=80" alt="Alishan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-black/20 text-white flex flex-col justify-end p-8">
+                            <p class="text-xs uppercase tracking-[0.3em] font-medium mb-1">High Mountains</p>
+                            <h4 class="text-3xl font-bold serif">Alishan [阿里山]</h4>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-grow">
+                        <p class="text-stone-500 text-sm leading-relaxed mb-8 italic">"Step into a mystical world of ancient misty forests and vintage trains. The air is crisp, the trees are thousands of years old."</p>
+                        <div class="grid grid-cols-2 gap-4 mb-10">
+                            <div class="text-[11px] font-bold uppercase tracking-widest text-stone-400 pb-2 border-b border-stone-200">Highlights</div>
+                            <div class="text-[11px] font-bold uppercase tracking-widest text-stone-400 pb-2 border-b border-stone-200">Logistics</div>
+                            <div class="text-xs text-stone-600">Forest Railway 🚂</div>
+                            <div class="text-xs text-stone-600 text-right">Full-day Private Tour</div>
+                            <div class="text-xs text-stone-600">Giant Tree Trails 🌲</div>
+                            <div class="text-xs text-stone-600 text-right">Depart from Chiayi HSR</div>
+                            <div class="text-xs text-stone-600">Fenqihu Old Street 🍱</div>
+                            <div class="text-xs text-stone-600 text-right">15-20°C Cool Air</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tainan Card -->
+                <div class="group flex flex-col rounded-3xl overflow-hidden bg-white border border-stone-100 card-hover">
+                    <div class="relative h-80 overflow-hidden img-container">
+                        <!-- 使用使用者提供的赤崁樓圖片連結 -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/%E5%8F%B0%E5%8D%97_%E8%B5%A4%E5%B4%81%E6%A8%93.jpg/1280px-%E5%8F%B0%E5%8D%97_%E8%B5%A4%E5%B4%81%E6%A8%93.jpg" alt="Chihkan Tower in Tainan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+                        <div class="absolute inset-0 bg-black/20 text-white flex flex-col justify-end p-8">
+                            <p class="text-xs uppercase tracking-[0.3em] font-medium mb-1">Old Capital</p>
+                            <h4 class="text-3xl font-bold serif">Tainan [台南]</h4>
+                        </div>
+                    </div>
+                    <div class="p-10 flex-grow">
+                        <p class="text-stone-500 text-sm leading-relaxed mb-8 italic">"Often called the Kyoto of Taiwan, Tainan is the heart of our culture. A city where time slows down in hidden alleys and grand temples."</p>
+                        <div class="grid grid-cols-2 gap-4 mb-10">
+                            <div class="text-[11px] font-bold uppercase tracking-widest text-stone-400 pb-2 border-b border-stone-200">Highlights</div>
+                            <div class="text-[11px] font-bold uppercase tracking-widest text-stone-400 pb-2 border-b border-stone-200">Logistics</div>
+                            <div class="text-xs text-stone-600">Art Museum 2 🏛️</div>
+                            <div class="text-xs text-stone-600 text-right">40 mins via HSR</div>
+                            <div class="text-xs text-stone-600">Historic Alleys 🏮</div>
+                            <div class="text-xs text-stone-600 text-right">City Walking Tour</div>
+                            <div class="text-xs text-stone-600">Authentic Local Cuisine 🍲</div>
+                            <div class="text-xs text-stone-600 text-right">Cultural Heritage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Day 4 -->
+    <section class="section-padding bg-stone-900 text-stone-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-20">
+                <div class="md:w-1/2">
+                    <span class="text-7xl font-bold text-stone-800 serif block leading-none">04</span>
+                    <h3 class="text-4xl font-bold mt-4 serif text-white">Tuesday, June 16</h3>
+                    <p class="text-xl text-stone-500 italic serif mt-2 mb-12">Farewell to Taiwan</p>
+                    <div class="space-y-8 text-sm tracking-wide">
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-2xl opacity-40 group-hover:opacity-100 transition-opacity">☕</span>
+                            <p>Morning: Specialty Coffee in Taichung's quiet lanes.</p>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-2xl opacity-40 group-hover:opacity-100 transition-opacity">🚅</span>
+                            <p>10:00 AM: HSR journey North to Taoyuan Airport.</p>
+                        </div>
+                        <div class="flex items-center gap-6 group">
+                            <span class="text-2xl opacity-40 group-hover:opacity-100 transition-opacity">✈️</span>
+                            <p>01:20 PM: Flight departure to Chiang Mai (CNX).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex flex-col items-center">
+                    <div class="relative p-16 border border-stone-800 rounded-full group hover:border-stone-700 transition-colors">
+                        <div class="text-center">
+                            <p class="serif text-4xl italic mb-4 text-white">Safe Travels</p>
+                            <p class="text-stone-500 uppercase tracking-[0.4em] text-[10px]">願旅途平安順心</p>
+                        </div>
+                        <div class="absolute inset-2 border border-dashed border-stone-800 rounded-full animate-[spin_20s_linear_infinite] opacity-30"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 text-center text-stone-500 text-[10px] uppercase tracking-[0.5em] border-t border-stone-100 bg-white">
+        Taiwan Exploration 2026 &copy; A Journey Planned for Reagan
+    </footer>
+
+</body>
+</html>
