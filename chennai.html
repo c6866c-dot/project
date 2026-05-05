@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清奈：藝術文化與靈魂的凝視</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3c40;    /* 深青色 - 沉靜能量 */
+            --accent: #c19a6b;     /* 復古金 - 藝術質感 */
+            --bg: #f9f7f2;         /* 象牙白 - 舒緩底色 */
+            --text: #2d2d2d;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .serif { font-family: 'Noto Serif TC', serif; }
+        
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(26,60,64,0.1) 0%, rgba(26,60,64,0.9) 100%);
+        }
+        
+        .section-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+
+        .time-tag {
+            background: var(--primary);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            letter-spacing: 0.1em;
+        }
+
+        .category-header {
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .ext-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 10px;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+        .ext-link:hover {
+            color: var(--primary);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+        .ext-link svg {
+            width: 12px;
+            height: 12px;
+            margin-left: 4px;
+        }
+        
+        .highlight-item {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+        .highlight-item::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.8rem;
+        }
+
+        .option-box {
+            border: 1px dashed var(--accent);
+            background: rgba(193, 154, 107, 0.05);
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body class="max-w-screen-md mx-auto shadow-2xl">
+
+    <!-- Header Section -->
+    <header class="relative h-[60vh] flex items-end overflow-hidden">
+        <img src="https://content.skyscnr.com/m/25f47f064713e699/original/IN_B2_A134_N_3D_2.jpg?resize=1212px:683px" class="absolute inset-0 w-full h-full object-cover" alt="Chennai Heritage">
+        <div class="hero-overlay absolute inset-0"></div>
+        <div class="relative p-8 text-white w-full">
+            <p class="text-xs tracking-[0.3em] uppercase mb-2 opacity-80">Chennai Art & Cultural Retreat</p>
+            <h1 class="text-4xl serif font-bold leading-tight mb-4">清奈：藝術文化與靈魂的凝視</h1>
+            <p class="text-sm font-light opacity-90 max-w-sm">結合世界遺產巡禮、曙光村靈性音療與入住體驗，開啟一場深度的南印文化漫遊。</p>
+        </div>
+    </header>
+
+    <!-- Welcome Message -->
+    <section class="p-8 bg-white italic text-center text-gray-600 border-b border-gray-100">
+        <p class="text-sm">「旅行的意義不在於抵達，而在於透過細微的觀察重新連結自我。」</p>
+    </section>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-md z-50 flex justify-around py-4 px-2 border-b border-gray-200">
+        <a href="#itinerary" class="text-xs font-bold tracking-widest text-primary border-b-2 border-primary pb-1">推薦行程</a>
+        <a href="#spots" class="text-xs font-bold tracking-widest text-gray-400 hover:text-primary transition pb-1">所有景點</a>
+        <a href="#dining" class="text-xs font-bold tracking-widest text-gray-400 hover:text-primary transition pb-1">精選餐飲</a>
+    </nav>
+
+    <!-- Suggested Itinerary Section -->
+    <section id="itinerary" class="p-8 scroll-mt-16">
+        <h2 class="serif text-2xl font-bold mb-8 text-center text-[#1a3c40]">團隊建議方案</h2>
+
+        <!-- Day 1: Optimized for Rest & Choice -->
+        <div class="mb-12">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-3xl font-serif text-accent opacity-50">01</span>
+                <div>
+                    <h3 class="font-bold text-lg">7/4 (Sat) 慢活清奈：遺產與信仰</h3>
+                    <p class="text-xs text-gray-400">Rest & Coastal Culture Focus</p>
+                </div>
+            </div>
+            
+            <div class="space-y-6 border-l-2 border-gray-100 ml-4 pl-8 relative">
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-gray-200 rounded-full"></span>
+                    <span class="time-tag">Morning</span>
+                    <h4 class="font-bold mt-2">飯店休憩與自由活動</h4>
+                    <p class="text-sm text-gray-500">早晨於飯店充分休息，緩解初抵達的疲勞。可悠閒享用早餐或飯店設施，準備下午的文化洗禮。</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-accent rounded-full"></span>
+                    <span class="time-tag">12:30</span>
+                    <h4 class="font-bold mt-2">午餐：Murugan Idli Shop</h4>
+                    <p class="text-sm text-gray-500">南印經典早餐老店，品嚐現點現做的 Idli 與 Dosa，搭配各式特製沾醬，體驗清奈最道地的味覺起點。</p>
+                </div>
+                
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-gray-200 rounded-full"></span>
+                    <span class="time-tag">14:00</span>
+                    <h4 class="font-bold mt-2">文化遺產（分頭行動可選方案）</h4>
+                    <div class="option-box">
+                        <div class="mb-4">
+                            <strong class="text-primary text-sm">選項 A：清奈政府博物館 (Bronze Gallery)</strong>
+                            <a href="https://southasia.go2c.info/view.php?doc=inChennaiMz" target="_blank" class="ext-link">詳細導覽<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                            <p class="text-xs text-gray-500 mt-1">欣賞朱羅王朝極致的青銅工藝，特別是舉世聞名的「濕婆舞王」真跡與精細的佛像、印度教神像收藏。</p>
+                        </div>
+                        <div>
+                            <strong class="text-primary text-sm">選項 B：聖喬治堡與聖瑪麗教堂 (St. Mary's Church)</strong>
+                            <p class="text-xs text-gray-500 mt-1">走訪全印最古老的英式教堂，感受 1680 年代至今的石造建築之美，於靜謐的氛圍中回望殖民初期的歷史。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-gray-200 rounded-full"></span>
+                    <span class="time-tag">16:30</span>
+                    <h4 class="font-bold mt-2">Storytrails: 孔雀步道深度步行導覽</h4>
+                    <p class="text-sm text-gray-500">深入卡帕里斯瓦拉神廟與邁拉坡市集，由專業導覽員解說神話典故，看透達羅毗荼建築背後的寓意與當地生活脈動。</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-gray-200 rounded-full"></span>
+                    <span class="time-tag">19:00</span>
+                    <h4 class="font-bold mt-2">聖多馬教堂夜訪 (San Thome Basilica)</h4>
+                    <p class="text-sm text-gray-500">純白教堂在夜間燈光映照下呈現不同於白天的神聖張力。行程終點：漫步瑪麗娜海灘享受海風，觀察在地夜間市集的活力。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2: Mahabalipuram FULL DETAIL RESTORED -->
+        <div class="mb-12">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-3xl font-serif text-accent opacity-50">02</span>
+                <div>
+                    <h3 class="font-bold text-lg">7/5 (Sun) 世界遺產之旅：馬馬拉普拉姆</h3>
+                    <p class="text-xs text-gray-400">UNESCO Heritage Deep Dive</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 border-l-4 border-accent shadow-md">
+                <span class="time-tag">09:00 - 18:00</span>
+                <h4 class="font-bold text-xl mt-3 mb-4">南印建築奇蹟巡禮
+                    <a href="https://www.viator.com/tours/Chennai/Day-trip-to-Mamallapuram-from-Chennai-by-Wonder-tours/d4624-107256P8" target="_blank" class="ext-link bg-accent/10 px-2 py-1 rounded">Viator 行程連結<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                </h4>
+                
+                <div class="space-y-6">
+                    <div class="highlight-item">
+                        <strong class="text-primary">阿周那的苦行 (Arjuna's Penance)</strong>
+                        <p class="text-sm text-gray-600">世界上最大的露天浮雕。細看兩塊巨石上刻畫的數百個神祇、人類與活靈活現的象群細節，領略史詩般的神話敘事巔峰。</p>
+                    </div>
+                    <div class="highlight-item">
+                        <strong class="text-primary">海岸神廟 (Shore Temple)</strong>
+                        <p class="text-sm text-gray-600">直面孟加拉灣的千年遺產，為帕拉瓦王朝的海上帝國榮光作證，其岩石因海風侵蝕展現出獨特的圓潤感，是時間與自然留下的雕刻藝術。</p>
+                    </div>
+                    <div class="highlight-item">
+                        <strong class="text-primary">五戰車神廟 (Five Rathas)</strong>
+                        <p class="text-sm text-gray-600">工藝極致的單石雕刻奇蹟。這並非單純建築，而是用整塊巨大的花崗岩「雕刻」出來的神廟模型，展現南印建築設計的雛形。</p>
+                    </div>
+                    <div class="highlight-item">
+                        <strong class="text-primary">克里希納奶油球 (Krishna's Butter Ball)</strong>
+                        <p class="text-sm text-gray-600">天然圓石懸停在傾斜斜坡上的力學奇蹟，是團隊必訪的合照地標與能量感受點。</p>
+                    </div>
+                </div>
+
+                <p class="text-sm text-gray-600 mt-6 pt-4 border-t border-gray-100">
+                    <span class="font-bold text-accent">下午延伸：</span>前往 **奧薩瓦代文藝街 (Othavadai St)**。漫步石雕工作室，觀察工匠敲擊聲，並在 **Le Yogi** 咖啡館露台享受躲避熱浪的慢時光。</p>
+            </div>
+        </div>
+
+        <!-- Day 3: Auroville Experience & Overnight -->
+        <div class="mb-12">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="text-3xl font-serif text-accent opacity-50">03</span>
+                <div>
+                    <h3 class="font-bold text-lg">7/6 (Mon) 曙光村：音療與修復之旅</h3>
+                    <p class="text-xs text-gray-400">Auroville & Svaram Experience</p>
+                </div>
+            </div>
+            <div class="space-y-6 border-l-2 border-gray-100 ml-4 pl-8 relative">
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-gray-200 rounded-full"></span>
+                    <span class="time-tag">09:00</span>
+                    <h4 class="font-bold mt-2">文化巡禮：卡拉舍露拉藝術中心 (Kalakshetra)</h4>
+                    <p class="text-sm text-gray-500">早晨於充滿自然氣息與大樹環繞的校園中，感受南印古典舞蹈與音樂的靜謐力量與傳承環境。</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-accent rounded-full"></span>
+                    <span class="time-tag">13:30</span>
+                    <h4 class="font-bold mt-2">午餐後出發：前往曙光村 (Auroville)</h4>
+                    <p class="text-sm text-gray-500">啟程前往著名的國際理想社區，在黃金球 Matrimandir 的氛圍中感受跨越國界的靈性共處。</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-accent rounded-full"></span>
+                    <span class="time-tag">15:30</span>
+                    <h4 class="font-bold mt-2 italic text-accent">核心行程：Svaram 音療體驗 (Sound Healing)</h4>
+                    <p class="text-sm text-gray-500 font-medium">使用手工特製的大型聲響共振樂器協助身心系統重新對齊，在頻率中洗滌細胞與旅途的疲憊。</p>
+                </div>
+                <div class="relative">
+                    <span class="absolute -left-[37px] top-1 w-3 h-3 bg-accent rounded-full"></span>
+                    <span class="time-tag">Evening</span>
+                    <h4 class="font-bold mt-2 italic text-accent">入住曙光村 (Stay at Auroville)</h4>
+                    <p class="text-sm text-gray-500">沉浸於實驗社區的寧靜夜晚，感受與清奈截然不同的星空與靈性共振，為南印之行留下深刻印記。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Spots List FULL DETAIL -->
+    <section id="spots" class="p-8 bg-[#1a3c40] text-white scroll-mt-16">
+        <h2 class="serif text-2xl font-bold mb-10 category-header">景點與文化全名錄</h2>
+        
+        <div class="space-y-12">
+            <!-- Spiritual & Healing -->
+            <div>
+                <h3 class="text-accent text-xs tracking-[0.2em] font-bold mb-4">SPIRITUAL & HEALING</h3>
+                <div class="grid gap-6">
+                    <div>
+                        <h4 class="font-bold text-lg">Svaram 音療中心 (Auroville)</h4>
+                        <p class="text-xs opacity-70 mt-1">享譽國際的聲響工藝與療癒中心，研發各種獨特的手工樂器，透過精準的音頻協助身體系統進行深度放鬆。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Sanjeevanam 阿育吠陀理療</h4>
+                        <p class="text-xs opacity-70 mt-1">提供溫油滴腦 (Shirodhara) 等傳統油壓理療。雖然本行程以音療為主，但這是極佳的個人修復備選項目。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">卡帕里斯瓦拉神廟 (Kapaleeshwarar)</h4>
+                        <p class="text-xs opacity-70 mt-1">南印達羅毗荼建築標竿，擁有震撼的 37 米高彩色塔門 (Gopuram)，是清奈邁拉坡區的信仰中心。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">聖多馬教堂 (San Thome Basilica)</h4>
+                        <p class="text-xs opacity-70 mt-1">傳說為耶穌十二門徒之一聖多馬的長眠之地，擁有獨特的新哥德式純白尖塔與華麗的彩繪玻璃。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">辨喜紀念館 (Vivekananda Illam)</h4>
+                        <p class="text-xs opacity-70 mt-1">粉紅色的半圓形地標建築。這是瑜伽傳播至西方的關鍵歷史起點，也是一處靜謐的海景冥想與閱讀場所。</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Arts & Nature -->
+            <div>
+                <h3 class="text-accent text-xs tracking-[0.2em] font-bold mb-4">ARTS & NATURE</h3>
+                <div class="grid gap-6">
+                    <div>
+                        <h4 class="font-bold text-lg">清奈政府博物館 (Bronze Gallery)
+                            <a href="https://southasia.go2c.info/view.php?doc=inChennaiMz" target="_blank" class="ext-link">詳細導覽<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></a>
+                        </h4>
+                        <p class="text-xs opacity-70 mt-1">收藏世界最頂級的「朱羅王朝青銅器」，藝術史愛好者不可錯過的聖地，展示了印度古代動態美學的極致。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">馬馬拉普拉姆遺產群 (UNESCO)</h4>
+                        <div class="pl-4 mt-2 border-l border-white/20 space-y-2">
+                            <p class="text-xs opacity-70">◆ <strong>阿周那的苦行</strong>：巨石雕刻的神話敘事巔峰。</p>
+                            <p class="text-xs opacity-70">◆ <strong>海岸神廟</strong>：面朝大海千年的帕拉瓦王朝結構石建築。</p>
+                            <p class="text-xs opacity-70">◆ <strong>五戰車神廟</strong>：單石雕刻出的五種不同南印建築形式模型。</p>
+                            <p class="text-xs opacity-70">◆ <strong>克里希納奶油球</strong>：展現大自然奇妙平衡力學的地標。</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">瑪麗娜海灘 (Marina Beach)</h4>
+                        <p class="text-xs opacity-70 mt-1">全球第二長的海灘，清奈人社交生活的核心。傍晚與夜晚是體驗在地生活活力與享受海風的最佳時點。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">邁拉坡市集 (Mylapore Market)</h4>
+                        <p class="text-xs opacity-70 mt-1">環繞神廟展開。鮮花、香料、宗教祈福用品與工藝品交織，是南印感官體驗最生動的日常缩影。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Guide Section FULL DETAIL -->
+    <section id="dining" class="p-8 scroll-mt-16">
+        <h2 class="serif text-2xl font-bold mb-10 text-primary category-header">美食地圖 (團隊精選)</h2>
+        <div class="space-y-6">
+            <div class="section-card p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="font-bold text-xl">Royal Vega (ITC Grand Chola)</h4>
+                    <span class="text-[0.6rem] border border-accent text-accent px-2 py-1 uppercase">Luxury Veg</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-2 font-light">
+                    位於清奈頂級飯店內，是最奢華的皇室宮廷式蔬食藝術。使用銀盤餐具與基於阿育吠陀原則設計的四季饗宴。
+                </p>
+                <p class="text-xs text-gray-400 mt-2 p-2 bg-stone-50 rounded">
+                    備註：同飯店內有 **Peshawri** 餐廳，專精西北邊境風格肉類燒烤與巨型烤餅（Naan），適合肉食喜好團員。
+                </p>
+            </div>
+            <div class="section-card p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="font-bold text-xl text-primary">Geetham Veg</h4>
+                    <span class="text-[0.6rem] bg-emerald-100 text-emerald-800 px-2 py-1 uppercase">Top Rated</span>
+                </div>
+                <p class="text-sm text-gray-600 font-light">當地口碑第一的高品質純蔬食餐廳，乾淨、衛生且風味極其正宗，是品嚐傳統南印 Thali 套餐的理想地點。</p>
+            </div>
+            <div class="section-card p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="font-bold text-xl">Golden Palate</h4>
+                    <span class="text-[0.6rem] bg-stone-100 text-stone-600 px-2 py-1 uppercase">Classic</span>
+                </div>
+                <p class="text-sm text-gray-600 font-light">位於馬馬拉普拉姆的 35 年老字號餐廳。環境與服務優良且風味穩定，是一日遊參訪遺產群的最佳中繼補給站。</p>
+            </div>
+            <div class="section-card p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="font-bold text-xl">Le Yogi Cafe</h4>
+                    <span class="text-[0.6rem] bg-amber-100 text-amber-800 px-2 py-1 uppercase">Cafe Culture</span>
+                </div>
+                <p class="text-sm text-gray-600 font-light">位於馬馬拉普拉姆文藝區內的法式印度風咖啡館。氣氛慵懶，適合下午躲避高溫、閱讀或品嚐創意融合點心。</p>
+            </div>
+            <div class="section-card p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h4 class="font-bold text-xl">Murugan Idli Shop</h4>
+                    <span class="text-[0.6rem] bg-gray-100 text-gray-500 px-2 py-1 uppercase">Soul Food</span>
+                </div>
+                <p class="text-sm text-gray-600 font-light">清奈南印風味魂級名店。提供現點現做的 Idli 與各式薄餅 Dosa，其標誌性的三種顏色特製酸辣醬是旅途必嚐。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="p-10 bg-white border-t border-gray-100 text-center">
+        <div class="max-w-xs mx-auto space-y-4">
+            <p class="serif italic text-lg text-primary">"Let the art breathe."</p>
+            <div class="text-xs text-gray-400 font-light tracking-widest leading-loose">
+                <p>Chennai Cultural Exploration Guide</p>
+            </div>
+            <div class="pt-6">
+                <button class="w-full bg-primary text-white py-3 text-xs tracking-widest uppercase font-bold hover:bg-[#122a2d] transition" onclick="window.print()">列印/存為團隊指南</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                navLinks.forEach(l => {
+                    l.classList.remove('text-primary', 'border-b-2', 'border-primary');
+                    l.classList.add('text-gray-400');
+                });
+                this.classList.add('text-primary', 'border-b-2', 'border-primary');
+                this.classList.remove('text-gray-400');
+            });
+        });
+    </script>
+</body>
+</html>
