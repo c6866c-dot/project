@@ -20,7 +20,7 @@
             --border: #E5E1D8;
             --font-title: 'Playfair Display', 'Noto Serif TC', serif;
             --font-body: 'Noto Serif TC', 'Inter', sans-serif;
-            --container-width: 900px; 
+            --container-width: 1050px; 
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -30,7 +30,7 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: var(--font-body);
-            line-height: 2; 
+            line-height: 1.8; 
             overflow-x: hidden;
             font-weight: 300;
         }
@@ -39,7 +39,7 @@
         nav {
             position: fixed;
             top: 0; width: 100%;
-            padding: 25px 50px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -52,16 +52,16 @@
         nav .logo {
             font-family: var(--font-title);
             font-weight: 700;
-            font-size: 18px;
-            letter-spacing: 3px;
+            font-size: 16px;
+            letter-spacing: 2px;
         }
 
         nav .menu a {
             text-decoration: none;
             color: var(--text-main);
-            margin-left: 40px;
-            font-size: 13px;
-            letter-spacing: 2px;
+            margin-left: 30px;
+            font-size: 12px;
+            letter-spacing: 1px;
             transition: color 0.3s;
             text-transform: uppercase;
             font-family: 'Inter', sans-serif;
@@ -95,96 +95,111 @@
             position: relative;
             z-index: 1;
             color: #fff;
+            max-width: 90%;
         }
 
         .header-content .meta {
             font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            letter-spacing: 8px;
-            margin-bottom: 25px;
+            font-size: 12px;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
             text-transform: uppercase;
             font-weight: 300;
         }
 
         .header-content h1 {
             font-family: var(--font-title);
-            font-size: clamp(40px, 6vw, 90px);
+            font-size: clamp(32px, 8vw, 80px);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            line-height: 1.2;
         }
 
         .header-content p.desc {
-            font-size: 22px;
+            font-size: clamp(16px, 4vw, 22px);
             font-family: var(--font-title);
             font-style: italic;
-            letter-spacing: 4px;
+            letter-spacing: 2px;
             color: #f8f8f8;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         /* 路線摘要區塊 */
         .route-summary-section {
-            padding: 120px 20px;
+            padding: 80px 20px;
             background-color: #fff;
             text-align: center;
         }
 
         .route-summary-section h2 {
             font-family: var(--font-title);
-            font-size: 36px;
-            margin-bottom: 30px;
-            letter-spacing: 2px;
+            font-size: 28px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         .route-text {
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
             color: var(--text-sub);
-            font-size: 18px;
-            line-height: 2.2;
+            font-size: 16px;
+            line-height: 2;
         }
 
-        /* 聖地專題區塊 */
+        /* 聖地專題區塊 (左右交錯排版) */
         .highlights-section {
-            padding: 140px 20px;
+            padding: 80px 20px;
             background-color: #F8F6F2;
         }
 
         .highlights-section .section-title {
             text-align: center;
-            margin-bottom: 120px;
+            margin-bottom: 60px;
             font-family: var(--font-title);
-            font-size: 42px;
+            font-size: 32px;
             color: var(--text-main);
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
         .highlight-box {
-            max-width: 800px;
-            margin: 0 auto 140px auto;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            max-width: var(--container-width);
+            margin: 0 auto 100px auto;
         }
 
-        .highlight-box:last-child { margin-bottom: 0; }
+        .highlight-box:nth-child(even) {
+            flex-direction: row-reverse;
+        }
 
-        .highlight-img {
+        .highlight-box .img-side {
+            flex: 1.1;
+        }
+
+        .highlight-box img {
             width: 100%;
-            height: 480px;
+            height: 450px;
             object-fit: cover;
-            border-radius: 4px;
-            margin-bottom: 50px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             background-color: #E5E1D8;
+        }
+
+        .highlight-box .text-side {
+            flex: 1;
         }
 
         .highlight-box h3 {
             font-family: var(--font-title);
-            font-size: 34px;
+            font-size: clamp(20px, 4vw, 26px);
             color: var(--text-main);
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             font-weight: 700;
+            line-height: 1.3;
         }
 
         .highlight-box h3::after {
@@ -193,33 +208,42 @@
             width: 40px;
             height: 2px;
             background: var(--accent-gold);
-            margin: 25px auto 0;
+            margin-top: 12px;
         }
 
         .highlight-box p {
             color: var(--text-sub);
-            font-size: 18px;
+            font-size: 16px;
             text-align: justify;
             margin-bottom: 20px;
-            line-height: 2.2;
+            line-height: 1.8;
         }
 
         .highlight-box ul {
-            margin-top: 30px;
-            padding: 0;
             list-style: none;
+            padding: 0;
             color: var(--text-sub);
-            font-size: 17px;
+            font-size: 15px;
         }
 
         .highlight-box ul li {
-            margin-bottom: 15px;
-            font-style: italic;
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .highlight-box ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: bold;
         }
 
         /* 行程詳細區塊 */
         section.itinerary-detail {
-            padding: 140px 20px;
+            padding: 80px 20px;
             max-width: var(--container-width);
             margin: 0 auto;
         }
@@ -227,44 +251,44 @@
         .itinerary-title {
             text-align: center;
             font-family: var(--font-title);
-            font-size: 42px;
-            margin-bottom: 120px;
-            letter-spacing: 2px;
+            font-size: 32px;
+            margin-bottom: 80px;
+            letter-spacing: 1px;
         }
 
         .day-block {
-            margin-bottom: 160px;
+            margin-bottom: 100px;
             display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 60px;
+            grid-template-columns: 120px 1fr;
+            gap: 40px;
         }
 
         .day-number {
             font-family: var(--font-title);
-            font-size: 64px;
+            font-size: 48px;
             font-weight: 700;
             color: var(--accent);
             line-height: 1;
             position: sticky;
-            top: 140px;
+            top: 100px;
             height: fit-content;
         }
 
         .day-number span {
             display: block;
             font-family: 'Inter', sans-serif;
-            font-size: 13px;
+            font-size: 12px;
             color: #999;
-            letter-spacing: 3px;
-            margin-top: 15px;
+            letter-spacing: 2px;
+            margin-top: 10px;
             font-weight: 400;
         }
 
         .day-content h2 {
             font-family: var(--font-title);
-            font-size: 32px;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 1px solid var(--border);
             font-weight: 500;
             letter-spacing: 1px;
@@ -273,82 +297,76 @@
         .info-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 35px;
-            font-size: 15px;
+            gap: 20px;
+            margin-bottom: 25px;
+            font-size: 14px;
             color: var(--accent);
             font-weight: 500;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             font-family: 'Inter', 'Noto Serif TC', sans-serif;
         }
 
-        .info-bar span i { margin-right: 10px; opacity: 0.8; }
+        .info-bar span i { margin-right: 8px; opacity: 0.8; }
 
         .details-text {
             color: var(--text-main);
-            font-size: 18px;
+            font-size: 17px;
             text-align: justify;
-            line-height: 2.2;
+            line-height: 1.8;
             font-weight: 300;
         }
 
         .details-text ul {
             list-style-type: none;
             padding-left: 0;
-            margin-top: 25px;
-            margin-bottom: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .details-text ul li {
             position: relative;
-            padding-left: 28px;
-            margin-bottom: 18px;
+            padding-left: 24px;
+            margin-bottom: 15px;
             color: var(--text-sub);
+            line-height: 1.6;
         }
 
         .details-text ul li::before {
             content: '✦';
             position: absolute;
             left: 0;
-            top: 2px;
+            top: 1px;
             color: var(--accent-gold);
-            font-size: 14px;
+            font-size: 12px;
         }
 
-        .details-text ul li strong {
-            color: var(--text-main);
-            font-weight: 600;
-            margin-right: 5px;
-        }
-
-        /* 引言框 */
         .thought-box {
             background-color: transparent;
-            padding: 40px 0 0 0;
+            padding: 30px 0 0 0;
             border-top: 1px solid var(--border);
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .thought-box h4 {
             font-family: var(--font-title);
-            font-size: 16px;
-            margin-bottom: 20px;
+            font-size: 14px;
+            margin-bottom: 15px;
             color: var(--accent-gold);
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
         .thought-box p {
-            font-size: 20px;
+            font-size: 18px;
             font-style: italic;
             color: var(--text-sub);
-            line-height: 2;
+            line-height: 1.8;
         }
 
-        /* 旅程指南區塊 (替代原本行前清單) */
+        /* 旅程指南區塊 */
         .logistics-section {
             background-color: #fff;
-            padding: 140px 20px;
+            padding: 80px 20px;
             border-top: 1px solid var(--border);
         }
 
@@ -360,34 +378,34 @@
         .logistics-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 80px;
+            gap: 60px;
         }
 
         .logistics-item h3 {
             font-family: var(--font-title);
-            font-size: 28px;
-            margin-bottom: 30px;
+            font-size: 24px;
+            margin-bottom: 25px;
             color: var(--accent);
             font-weight: 500;
             letter-spacing: 1px;
             border-bottom: 1px solid var(--accent-gold);
             display: inline-block;
-            padding-bottom: 10px;
+            padding-bottom: 8px;
         }
 
         .logistics-item ul { list-style: none; padding-left: 0; }
 
         .logistics-item li {
-            padding: 18px 0;
+            padding: 15px 0;
             border-bottom: 1px solid var(--border);
-            font-size: 17px;
-            line-height: 1.6;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         .logistics-item li strong {
             display: block;
             color: var(--text-main);
-            font-size: 15px;
+            font-size: 14px;
             font-family: 'Inter', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -396,36 +414,90 @@
 
         .logistics-item li span {
             color: var(--text-sub);
-            font-size: 16px;
+            font-size: 15px;
         }
 
         /* 頁尾 */
         footer {
             background: #111;
             color: #fff;
-            padding: 120px 20px;
+            padding: 80px 20px;
             text-align: center;
         }
 
         footer h2 {
             font-family: var(--font-title);
-            font-size: 32px;
-            margin-bottom: 20px;
-            letter-spacing: 6px;
+            font-size: 24px;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
             font-weight: 400;
         }
 
-        footer p { opacity: 0.4; font-size: 13px; margin-top: 20px; letter-spacing: 2px; font-family: 'Inter', sans-serif; }
+        footer p { opacity: 0.4; font-size: 12px; margin-top: 15px; letter-spacing: 1px; font-family: 'Inter', sans-serif; }
 
+        /* 手機版排版深度優化 */
         @media (max-width: 768px) {
-            .day-block { grid-template-columns: 1fr; gap: 20px; margin-bottom: 100px; }
-            .day-number { position: relative; top: 0; display: flex; align-items: baseline; gap: 15px; font-size: 48px; }
-            .day-number span { margin-top: 0; }
-            .day-content h2 { font-size: 26px; }
-            .logistics-grid { grid-template-columns: 1fr; gap: 50px; }
-            nav { padding: 20px; }
+            nav { padding: 15px 20px; }
             nav .menu { display: none; }
-            .highlight-box { margin-bottom: 80px; }
+            nav .logo { font-size: 14px; }
+
+            .header-content { padding: 20px; }
+            .header-content h1 { font-size: 34px; }
+            .header-content .meta { letter-spacing: 4px; font-size: 10px; }
+
+            .route-summary-section { padding: 60px 25px; }
+            .route-summary-section h2 { font-size: 24px; }
+
+            .highlights-section { padding: 60px 25px; }
+            .highlights-section .section-title { font-size: 28px; margin-bottom: 40px; }
+            
+            .highlight-box { 
+                flex-direction: column !important; 
+                gap: 30px; 
+                margin-bottom: 60px; 
+            }
+            .highlight-box img { 
+                max-height: 300px; 
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            }
+            .highlight-box h3 { 
+                font-size: 20px;
+                margin-bottom: 15px; 
+            }
+            .highlight-box p { font-size: 15px; line-height: 1.7; }
+
+            section.itinerary-detail { padding: 60px 25px; }
+            .itinerary-title { font-size: 28px; margin-bottom: 50px; }
+
+            .day-block { grid-template-columns: 1fr; gap: 15px; margin-bottom: 80px; }
+            .day-number { 
+                position: relative; 
+                top: 0; 
+                display: flex; 
+                align-items: baseline; 
+                gap: 12px; 
+                font-size: 36px; 
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+            .day-number span { margin-top: 0; font-size: 11px; letter-spacing: 1px; }
+            
+            .day-content h2 { 
+                font-size: 20px;
+                padding-bottom: 10px;
+                margin-bottom: 15px; 
+                border-bottom: none;
+            }
+            .info-bar { gap: 12px; font-size: 12px; margin-bottom: 20px; }
+            .details-text { font-size: 15px; line-height: 1.7; }
+            .thought-box p { font-size: 16px; }
+
+            .logistics-section { padding: 60px 25px; }
+            .logistics-grid { grid-template-columns: 1fr; gap: 40px; }
+            .logistics-item h3 { font-size: 20px; }
+            
+            footer h2 { font-size: 18px; letter-spacing: 2px; }
         }
     </style>
 </head>
@@ -442,7 +514,7 @@
     </nav>
 
     <header>
-        <img src="https://res.klook.com/image/upload/c_crop,h_1562,w_2499,x_0,y_19,z_0.3/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/llpubt2ztk8p9lkl0ukd.jpg" alt="" class="hero-bg">
+        <img src="https://res.klook.com/image/upload/c_crop,h_1562,w_2499,x_0,y_19,z_0.3/w_750,h_469,c_fill,q_85/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/llpubt2ztk8p9lkl0ukd.jpg" alt="西藏岡仁波齊峰" class="hero-bg">
         <div class="header-content">
             <div class="meta">May 16 — June 02, 2026</div>
             <h1>穿越時間的朝聖</h1>
@@ -450,119 +522,155 @@
         </div>
     </header>
 
-    <!-- 路線摘要 -->
     <section id="route" class="route-summary-section">
         <h2>空間與移動的軌跡</h2>
         <div class="route-text">
-            <p>本趟旅程將由尼泊爾加德滿都 (Kathmandu) 啟程，搭乘小型飛機飛越喜馬拉雅山脈 (Himalayas)，深入偏遠的胡姆拉 (Humla) 山谷。我們將在緩慢的徒步中適應高海拔，隨後跨越邊境進入西藏 (Tibet) 高原。在探訪古格王朝 (Guge Kingdom) 遺址與瑪旁雍錯 (Lake Manasarovar) 聖湖後，正式迎來三天、最高海拔 5650 公尺的岡仁波齊轉山 (Mt. Kailash Kora) 挑戰，最終於聖城拉薩 (Lhasa) 圓滿賦歸。</p>
+            <p>本趟旅程將由尼泊爾加德滿都 (Kathmandu) 啟程，搭乘小型飛機飛越喜馬拉雅山脈 (Himalayas)，深入偏遠的胡姆拉 (Humla) 山谷。我們將在徒步中適應高海拔，隨後跨越邊境進入西藏高原 (Tibetan Plateau)，在探訪古格王朝 (Guge Kingdom) 與東嘎皮央 (Donggar & Piyang) 後，展開三天最高海拔 5650 公尺的岡仁波齊轉山 (Mt. Kailash Kora) 挑戰，最終於聖城拉薩 (Lhasa) 圓滿賦歸。</p>
         </div>
     </section>
 
-    <!-- 聖地專題 -->
+    <!-- 聖地專題 (左右交錯排版) -->
     <section id="highlights" class="highlights-section">
         <h2 class="section-title">聖地深度解析</h2>
         
         <div class="highlight-box">
-            <img src="https://www.wondersoftibet.com/wp-content/uploads/2018/06/Tholing-Monastery-in-the-village-of-Sand.jpeg" alt="古格王朝 (Guge Kingdom)" class="highlight-img">
-            <h3>古格王朝 (Guge Kingdom)：土林中的失落文明</h3>
-            <p>在西藏最西端的阿里地區札達縣 (Zhada County, Ngari Prefecture)，隱藏著這段被時間與風沙掩埋的輝煌傳奇。古格文明是中世紀西藏的巔峰代表，完美詮釋了佛法中「高際必墮」與「成、住、壞、空」的宇宙規律。</p>
-            <p style="text-align: center; color: var(--accent); font-weight: 500; margin: 30px 0 10px 0;">文明遺址的三層立體結構：</p>
-            <ul style="list-style: none; padding: 0; text-align: center; color: var(--text-sub);">
-                <li style="margin-bottom: 10px;"><strong>底層洞窟：</strong> 平民與奴隸的居所與勞動空間。</li>
-                <li style="margin-bottom: 10px;"><strong>中層寺廟：</strong> 僧侶與信仰的中心（如著名的紅殿 Dukhang 與益西沃殿 Yeshe-O Temple）。</li>
-                <li style="margin-bottom: 10px;"><strong>上層宮殿：</strong> 王族與貴族的堡壘，從底至頂高低落差達 300 米。</li>
-            </ul>
+            <div class="img-side">
+                <img src="https://www.wondersoftibet.com/wp-content/uploads/2018/06/Tholing-Monastery-in-the-village-of-Sand.jpeg" alt="古格王朝 (Guge Kingdom)">
+            </div>
+            <div class="text-side">
+                <h3>古格王朝 (Guge Kingdom)：土林中的失落文明</h3>
+                <p>隱藏於札達縣 (Zhada County) 蒼茫土林中的傳奇王國。這不只是考古遺址，更是西藏中世紀文明的巔峰體現，完美體現了「成、住、壞、空」與「高際必墮」的宇宙規律。</p>
+                <ul>
+                    <li><strong>立體建築結構：</strong>底層為平民洞窟，中層為僧侶寺廟（如紅殿 Dukhang 與益西沃殿 Yeshe-O Temple），上層為王族宮殿，最高落差達 300 米。</li>
+                    <li><strong>托林寺 (Tholing Monastery)：</strong>意為「懸浮在空中的寺廟」，由益西沃 (Yeshe-O) 創立，是佛教後弘期的重要發源地。</li>
+                    <li><strong>精密規劃：</strong>保存了 445 處房屋、879 個洞窟與 32 座佛塔，展現出當時高度發達的社會與藝術成就。</li>
+                </ul>
+            </div>
         </div>
 
         <div class="highlight-box">
-            <img src="https://english.news.cn/20230529/42226c07a1b04406be6a93b3bb36af4e/2023052942226c07a1b04406be6a93b3bb36af4e_20230529de81148ccad14684830fd22d1fa16c5a.jpg" alt="東嘎與皮央 (Donggar & Piyang)" class="highlight-img">
-            <h3>東嘎與皮央 (Donggar & Piyang)：第二敦煌的藝術</h3>
-            <p>作為古格王國 (Guge Kingdom) 的重要衛星聚落，東嘎與皮央 (Donggar & Piyang) 呈現了截然不同的生活風貌。這裡更貼近人們日常的真實樣貌，其龐大的規模被學界譽為「第二敦煌」。</p>
-            <p style="text-align: center; color: var(--accent); font-weight: 500; margin: 30px 0 10px 0;">石窟聚落的三大特色：</p>
-            <ul style="list-style: none; padding: 0; text-align: center; color: var(--text-sub);">
-                <li style="margin-bottom: 10px;"><strong>懸崖洞穴群：</strong> 數百個鑿入砂岩的洞穴，形成垂直發展的生活與修行空間。</li>
-                <li style="margin-bottom: 10px;"><strong>早期佛教壁畫：</strong> 洞內留存了融合犍陀羅 (Gandhara) 與喀什米爾 (Kashmir) 風格的珍貴壁畫，色彩飽滿。</li>
-                <li style="margin-bottom: 10px;"><strong>防禦與農耕：</strong> 遺址中仍保留防禦瞭望塔與古代引水渠系統，展現聚落生存智慧。</li>
-            </ul>
+            <div class="img-side">
+                <img src="https://english.news.cn/20230529/42226c07a1b04406be6a93b3bb36af4e/2023052942226c07a1b04406be6a93b3bb36af4e_20230529de81148ccad14684830fd22d1fa16c5a.jpg" alt="東嘎與皮央 (Donggar & Piyang)">
+            </div>
+            <div class="text-side">
+                <h3>東嘎與皮央 (Donggar & Piyang)：第二敦煌的藝術</h3>
+                <p>古格王國 (Guge Kingdom) 的重要衛星聚落，是高原上極為罕見的立體石窟系統。這裡更貼近人們日常的真實樣貌，其規模與藝術價值被譽為「第二敦煌」。</p>
+                <ul>
+                    <li><strong>懸崖洞穴群：</strong>數百個鑿入砂岩的洞穴，形成垂直發展的生活與修行空間。較高處為禪修洞，空間簡樸而安靜。</li>
+                    <li><strong>早期壁畫：</strong>洞內留存了融合犍陀羅 (Gandhara) 與喀什米爾 (Kashmir) 風格的壁畫，色彩歷經千年依然鮮活生動。</li>
+                    <li><strong>生活智慧：</strong>遺址仍保留古代防禦瞭望塔與引水渠系統，展現當時聚落對環境的高度適應與組織能力。</li>
+                </ul>
+            </div>
         </div>
 
         <div class="highlight-box">
-            <img src="https://sidcnp.org/uploads/images/About%20Us/Humla-Simkot.jpg" alt="胡姆拉 (Humla)" class="highlight-img">
-            <h3>胡姆拉 (Humla)：時間凝滯的朝聖古道</h3>
-            <p>胡姆拉 (Humla) 位於尼泊爾西北偏遠秘境，曾是連接西藏 (Tibet) 與尼泊爾低地的古老鹽貿易通道 (Salt Trade Route)。商隊伴隨著數百頭犛牛，在嚴峻的氣候中運送物資與信仰。</p>
-            <p style="text-align: center; color: var(--accent); font-weight: 500; margin: 30px 0 10px 0;">秘境文化與生態：</p>
-            <ul style="list-style: none; padding: 0; text-align: center; color: var(--text-sub);">
-                <li style="margin-bottom: 10px;"><strong>原始薩滿信仰 (Shamanism)：</strong> 居民尊崇「水、土、火、風、空間」五元素，與藏傳佛教自然共存。</li>
-                <li style="margin-bottom: 10px;"><strong>孤立的生態圈：</strong> 遠離現代公路，原始森林未受破壞，是雪豹與藍羊的棲息地。</li>
-                <li style="margin-bottom: 10px;"><strong>緩慢適應期：</strong> 踏上這條古道，是讓身體循序漸進適應高海拔的最佳前奏。</li>
-            </ul>
+            <div class="img-side">
+                <img src="https://sidcnp.org/uploads/images/About%20Us/Humla-Simkot.jpg" alt="胡姆拉 (Humla)">
+            </div>
+            <div class="text-side">
+                <h3>胡姆拉 (Humla)：時間凝滯的朝聖古道</h3>
+                <p>位於尼泊爾西北偏遠秘境，是連接西藏高原與尼泊爾低地的古老鹽貿易通道 (Salt Trade Route)。在這裡，人與自然的界線依然模糊而和諧。</p>
+                <ul>
+                    <li><strong>五元素信仰：</strong>居民多信奉尊崇「水、土、火、風、空間」五元素的薩滿傳統 (Shamanism)，與佛教在此自然共存。</li>
+                    <li><strong>原始生態：</strong>遠離現代公路，保留了原始森林與雪豹 (Snow Leopard)、藍羊 (Blue Sheep) 的棲息地。</li>
+                    <li><strong>身心調頻：</strong>在胡姆拉山谷中的慢節奏步行，是身體適應高海拔呼吸與安靜身心的最佳過渡期。</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- 詳細行程 -->
+    <!-- 詳細行程 (全18日獨立拆解，細節完整補回) -->
     <section id="itinerary" class="itinerary-detail">
         <h2 class="itinerary-title">十八日朝聖軌跡</h2>
 
+        <!-- Day 1 -->
         <div class="day-block">
             <div class="day-number">01<span>5/16 SAT</span></div>
             <div class="day-content">
                 <div class="info-bar">
                     <span><i class="fa-solid fa-mountain"></i> 海拔 1260m</span>
-                    <span><i class="fa-solid fa-hotel"></i> 加德滿都 (Ananda Tree House)</span>
+                    <span><i class="fa-solid fa-hotel"></i> Ananda Tree House</span>
                 </div>
                 <h2>抵達加德滿都 (Kathmandu)・安頓對齊</h2>
                 <div class="details-text">
-                    抵達加德滿都 (Kathmandu)，由機場接機至博達拿 (Boudhanath)。在滿願佛塔 (Boudhanath Stupa) 旁休息安頓身心，讓心慢慢從日常切換到朝聖的節奏。
-                </div>
-            </div>
-        </div>
-
-        <div class="day-block">
-            <div class="day-number">02<span>5/17 SUN</span></div>
-            <div class="day-content">
-                <div class="info-bar">
-                    <span><i class="fa-solid fa-mountain"></i> 海拔 1500m</span>
-                    <span><i class="fa-solid fa-hotel"></i> 尼泊爾根傑 (Siddhartha Hotel)</span>
-                </div>
-                <h2>加德滿都 (Kathmandu) → 尼泊爾根傑 (Nepalgunj)</h2>
-                <div class="details-text">
-                    早晨散步至滿願大佛塔 (Boudhanath Stupa) 繞塔，祈福靜心。隨後參訪雪謙寺 (Shechen Monastery)，領受法王加持與祝福。午後搭乘國內航班飛往尼泊爾根傑 (Nepalgunj)，逐步離開城市，向邊境山區前行。
-                </div>
-            </div>
-        </div>
-
-        <div class="day-block">
-            <div class="day-number">03<span>5/18 MON</span></div>
-            <div class="day-content">
-                <div class="info-bar">
-                    <span><i class="fa-solid fa-mountain"></i> 海拔 2890m</span>
-                    <span><i class="fa-solid fa-house-chimney"></i> 西米科特 (當地村落家庭)</span>
-                </div>
-                <h2>飛越群山・走入胡姆拉 (Humla)</h2>
-                <div class="details-text">
-                    清晨搭乘小型飛機飛往西米科特 (Simikot)，沿途俯瞰層層喜馬拉雅山脈 (Himalayas)。
                     <ul>
-                        <li><strong>離開現代：</strong> 抵達後正式離開公路與現代設施，進入純粹的生活節奏。</li>
-                        <li><strong>短程健行：</strong> 進行適應性高山短程徒步，夜宿當地家庭。</li>
+                        <li><strong>機場接駁：</strong>抵達加德滿都，由團隊於機場迎接，接機至博達拿 (Boudhanath)。</li>
+                        <li><strong>安頓身心：</strong>在滿願佛塔 (Boudhanath Stupa) 旁休息安頓，讓心慢慢從日常切換到朝聖的節奏。</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Day 2 -->
         <div class="day-block">
-            <div class="day-number">04-05<span>5/19-20</span></div>
+            <div class="day-number">02<span>5/17 SUN</span></div>
             <div class="day-content">
                 <div class="info-bar">
-                    <span><i class="fa-solid fa-mountain"></i> 海拔 2800-2890m</span>
-                    <span><i class="fa-solid fa-shoe-prints"></i> 高山村落徒步</span>
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 1500m</span>
+                    <span><i class="fa-solid fa-hotel"></i> Siddhartha Hotel</span>
                 </div>
-                <h2>尼因山谷 (Nyin Valley)・深度貼近土地</h2>
+                <h2>加德滿都 → 尼泊爾根傑 (Nepalgunj)</h2>
                 <div class="details-text">
-                    這兩天我們將在胡姆拉 (Humla) 山谷中進行連續的聚落徒步，行走於巴爾岡 (Bargaun)、尼因山谷 (Nyin Valley) 與塔村 (Tha Village) 之間。
                     <ul>
-                        <li><strong>文化交融：</strong> 觀察下胡姆拉的 Khas 族群 (Khas People) 與上胡姆拉的藏傳佛教社區如何在此交匯。</li>
-                        <li><strong>原始信仰：</strong> 體驗當地尊崇「水、土、火、風、空間」五元素的薩滿信仰 (Shamanism)。</li>
-                        <li><strong>生態工作坊：</strong> 參訪達提瑪塔社區 (Dharthimata Community) 生態工作坊，學習環境共生智慧。第五日緩步健行返回西米科特 (Simikot)。</li>
+                        <li><strong>繞塔祈福：</strong>早晨散步至滿願大佛塔 (Boudhanath Stupa) 繞塔，祈福靜心，調頻校準頻率。</li>
+                        <li><strong>聖地參訪：</strong>參訪雪謙寺 (Shechen Monastery)，靜坐與沉澱，領受法王加持與祝福。</li>
+                        <li><strong>前往邊境：</strong>午後搭乘國內航班飛往尼泊爾根傑 (Nepalgunj)，逐步離開城市，朝山區前行。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="day-block">
+            <div class="day-number">03<span>5/18 MON</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 2890m</span>
+                    <span><i class="fa-solid fa-house-chimney"></i> 當地村落家庭</span>
+                </div>
+                <h2>飛越群山・走入胡姆拉 (Humla)</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>山區飛行：</strong>清晨搭乘 50 分鐘小型飛機飛往西米科特 (Simikot)，沿途鳥瞰層層喜馬拉雅山巒 (Himalayas)。</li>
+                        <li><strong>高原徒步：</strong>展開適應性高山短程健行，前往巴爾岡 (Bargaun) 村落。</li>
+                        <li><strong>原鄉體驗：</strong>正式離開公路與現代設施，進入原始生活節奏，夜宿當地家庭。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="day-block">
+            <div class="day-number">04<span>5/19 TUE</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 2800m</span>
+                    <span><i class="fa-solid fa-house-chimney"></i> 當地村落家庭</span>
+                </div>
+                <h2>尼因山谷 (Nyin Valley) 探索</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>古老村落：</strong>今日行走於巴爾岡 (Bargaun) 與塔村 (Tha Village) 之間。</li>
+                        <li><strong>薩滿文化：</strong>體驗當地尊崇「水、土、火、風、空間」五元素的薩滿信仰 (Shamanism) 與藏傳佛教交織的文化脈絡。</li>
+                        <li><strong>生態智慧：</strong>參訪達提瑪塔社區 (Dharthimata Community) 生態工作坊，學習極端環境中的農耕與土地共生智慧。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="day-block">
+            <div class="day-number">05<span>5/20 WED</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 2890m</span>
+                    <span><i class="fa-solid fa-hotel"></i> Guest house</span>
+                </div>
+                <h2>探索村落 → 返回西米科特 (Simikot)</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>村落漫步：</strong>上午探索尼因山谷文化村，走訪高山村落，感受緩慢而純樸的生活節奏。</li>
+                        <li><strong>適應健行：</strong>午後健行約 3 小時返回西米科特 (Simikot)，在移動中調整呼吸與身體節奏。</li>
                     </ul>
                 </div>
                 <div class="thought-box">
@@ -572,111 +680,262 @@
             </div>
         </div>
 
+        <!-- Day 6 -->
         <div class="day-block">
             <div class="day-number">06<span>5/21 THU</span></div>
             <div class="day-content">
                 <div class="info-bar">
                     <span><i class="fa-solid fa-mountain"></i> 海拔 4000m</span>
-                    <span><i class="fa-solid fa-passport"></i> 跨越國界至西藏普蘭</span>
+                    <span><i class="fa-solid fa-passport"></i> Purang Hotel</span>
                 </div>
-                <h2>跨越國界・進入西藏高原 (Tibetan Plateau)</h2>
+                <h2>跨越國界・進入西藏普蘭 (Purang)</h2>
                 <div class="details-text">
-                    長途移動日，驅車前往尼泊爾與西藏交界的邊境城鎮希爾薩 (Hilsa)，正式跨越邊境進入西藏普蘭 (Purang)。沿途景色從狹窄河谷逐漸開展為遼闊高原。
-                </div>
-            </div>
-        </div>
-
-        <div class="day-block">
-            <div class="day-number">07-08<span>5/22-23</span></div>
-            <div class="day-content">
-                <div class="info-bar">
-                    <span><i class="fa-solid fa-mountain"></i> 海拔 4500m / 4200m</span>
-                    <span><i class="fa-solid fa-landmark"></i> 札達縣與遺址區</span>
-                </div>
-                <h2>札達土林・古格文明回聲</h2>
-                <div class="details-text">
-                    探索札達 (Zhada) 地區的自然奇觀與失落文明。
                     <ul>
-                        <li><strong>Day 07 穿越土林：</strong> 欣賞風蝕形成的壯麗「札達土林 (Zhada Earth Forest)」奇觀。</li>
-                        <li><strong>Day 08 探索王城：</strong> 探訪古格王朝 (Guge Kingdom) 王城遺址，感受當年階級森嚴的立體社會結構。</li>
-                        <li><strong>Day 08 隱秘洞穴：</strong> 尋訪被譽為「第二敦煌」的東嘎與皮央 (Donggar & Piyang) 石窟，欣賞精美佛教壁畫。</li>
+                        <li><strong>長途移動：</strong>搭乘越野車約 6 小時驅車前往邊境城鎮希爾薩 (Hilsa)。</li>
+                        <li><strong>進入高原：</strong>跨越國界正式進入西藏普蘭縣 (Purang)。沿途景色從河谷、峽谷逐漸轉為遼闊高原。</li>
+                        <li><strong>安住身心：</strong>在空間的轉換中讓身心自然沉靜，穩定並適應高原反應。</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Day 7 -->
         <div class="day-block">
-            <div class="day-number">09-10<span>5/24-25</span></div>
+            <div class="day-number">07<span>5/22 FRI</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 4500m</span>
+                    <span><i class="fa-solid fa-car"></i> 札達當地旅館</span>
+                </div>
+                <h2>前往札達 (Zhada)・土林奇觀</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>穿越高原：</strong>長途車程約 7 小時前往札達 (Zhada)。沿途穿越遼闊的高原景色。</li>
+                        <li><strong>土林地貌：</strong>欣賞風蝕形成的壯麗「札達土林 (Zhada Earth Forest)」自然奇觀。</li>
+                        <li><strong>休息適應：</strong>抵達後以休息為主，適應高原環境，感受這片土地的寧靜與開闊，並為隔日的參訪儲備體力。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 8 -->
+        <div class="day-block">
+            <div class="day-number">08<span>5/23 SAT</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 4200m</span>
+                    <span><i class="fa-solid fa-landmark"></i> 札達當地旅館</span>
+                </div>
+                <h2>古格王朝 (Guge) 與東嘎皮央 (Piyang)</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>古格遺址：</strong>透過專人導覽，探訪依山而建、落差達 300 米的古格王朝 (Guge Kingdom) 王城遺址，參觀紅殿 (Dukhang) 與白殿。</li>
+                        <li><strong>皮央石窟：</strong>尋訪被譽為「第二敦煌」的東嘎與皮央 (Donggar & Piyang) 石窟，欣賞歷經千年依然鮮活的精美佛教壁畫。</li>
+                        <li><strong>歷史沉思：</strong>在遺址間感受文明的興盛與消逝，體會無常所帶來的深層回應。</li>
+                    </ul>
+                </div>
+                <div class="thought-box">
+                    <h4>行旅之思</h4>
+                    <p>「在有限的生命之中，我們所追尋的是什麼？又留下了什麼？古格真正給予我們的不是答案，而是一種更深的看見。」</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 9 -->
+        <div class="day-block">
+            <div class="day-number">09<span>5/24 SUN</span></div>
             <div class="day-content">
                 <div class="info-bar">
                     <span><i class="fa-solid fa-mountain"></i> 海拔 4600m</span>
-                    <span><i class="fa-solid fa-water"></i> 瑪旁雍錯與塔欽</span>
+                    <span><i class="fa-solid fa-hotel"></i> Himalaya Hotel</span>
                 </div>
-                <h2>瑪旁雍錯聖湖 → 塔欽 (Darchen) 整備</h2>
+                <h2>瑪旁雍錯 (Lake Manasarovar) → 塔欽 (Darchen)</h2>
                 <div class="details-text">
                     <ul>
-                        <li><strong>洗淨業力：</strong> 第九日抵達聖水「瑪旁雍錯 (Lake Manasarovar)」，在湖畔靜坐與祈願。</li>
-                        <li><strong>抵達起點：</strong> 第十日前往神山腳下的「塔欽 (Darchen)」，穩定心緒，進行轉山前的最後裝備檢查。</li>
+                        <li><strong>聖湖洗滌：</strong>車程約 6-7 小時，前往被視為洗淨業力的聖湖「瑪旁雍錯 (Lake Manasarovar)」。</li>
+                        <li><strong>湖畔靜坐：</strong>在湖畔多處停留，保留靜坐、祈願與內在整理的空間。</li>
+                        <li><strong>抵達起點：</strong>傍晚驅車約 2 小時抵達神山腳下的塔欽 (Darchen)，正式站在岡仁波齊轉山的起點。</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Day 10 -->
         <div class="day-block">
-            <div class="day-number">11-13<span>5/26-28</span></div>
+            <div class="day-number">10<span>5/25 MON</span></div>
             <div class="day-content">
                 <div class="info-bar">
-                    <span><i class="fa-solid fa-mountain"></i> 最高點 5650m</span>
-                    <span><i class="fa-solid fa-person-hiking"></i> 岡仁波齊環山步道</span>
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 4600m</span>
+                    <span><i class="fa-solid fa-hotel"></i> Himalaya Hotel</span>
                 </div>
-                <h2>岡仁波齊轉山 (Mt. Kailash Kora)・核心三日</h2>
+                <h2>塔欽 (Darchen)・轉山前整備</h2>
                 <div class="details-text">
                     <ul>
-                        <li><strong>Day 11 (止熱寺)：</strong> 前往「止熱寺 (Dirapuk Monastery)」，直面神山壯闊的北壁。</li>
-                        <li><strong>Day 12 (卓瑪拉山口)：</strong> 跨越海拔 5650 公尺的最高點「卓瑪拉山口 (Dolma La Pass)」，經歷靈性突破。</li>
-                        <li><strong>Day 13 (圓滿)：</strong> 返回塔欽 (Darchen)，感受平靜與釋放。午後驅車前往薩嘎 (Saga)。</li>
+                        <li><strong>神山遠眺：</strong>探索岡仁波齊觀景點 (Mt. Kailash view point)，與聖山頻率對齊。</li>
+                        <li><strong>身心調頻：</strong>轉山前的重要整合日。放鬆身心，穩定心緒，清理內在意圖。</li>
+                        <li><strong>物資準備：</strong>檢查裝備（個人隨身包限重 6KG 內，挑夫包 10-12KG），為明日的轉山做好萬全準備。</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Day 11 -->
         <div class="day-block">
-            <div class="day-number">14-16<span>5/29-31</span></div>
+            <div class="day-number">11<span>5/26 TUE</span></div>
             <div class="day-content">
                 <div class="info-bar">
-                    <span><i class="fa-solid fa-mountain"></i> 海拔 3850-3650m</span>
-                    <span><i class="fa-solid fa-vihara"></i> 日喀則與拉薩市區</span>
+                    <span><i class="fa-solid fa-mountain"></i> 最高 5200m</span>
+                    <span><i class="fa-solid fa-person-hiking"></i> 止熱寺 (Dirapuk)</span>
                 </div>
-                <h2>日喀則 (Xigaze) → 拉薩 (Lhasa)・聖地巡禮</h2>
+                <h2>轉山第一日・直面北壁</h2>
                 <div class="details-text">
                     <ul>
-                        <li><strong>江孜與日喀則：</strong> 參觀江孜 (Gyantse) 的「白居寺」與日喀則的「扎什倫布寺」。</li>
-                        <li><strong>聖城拉薩：</strong> 進入西藏心臟，參訪「布達拉宮 (Potala Palace)」與「大昭寺 (Jokhang Temple)」。</li>
-                        <li><strong>薩嘎月滿月：</strong> 漫步於八廓街 (Barkhor Street)，感受薩嘎月 (Saga Dawa) 濃郁的信仰日常。</li>
+                        <li><strong>正式出發：</strong>從塔欽出發，正式踏上環繞神山的轉山路徑 (Kora)，進行約 6 小時的暖身徒步。</li>
+                        <li><strong>安住當下：</strong>專注步伐與呼吸。沿途觀看祈福旗、佛塔、經堆，體驗轉山朝聖氛圍。</li>
+                        <li><strong>抵達止熱寺：</strong>前往止熱寺 (Dirapuk Monastery)，直面並感受神山壯闊的北壁與強大能量。</li>
                     </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Day 12 -->
         <div class="day-block">
-            <div class="day-number">17-18<span>6/01-02</span></div>
+            <div class="day-number">12<span>5/27 WED</span></div>
             <div class="day-content">
                 <div class="info-bar">
-                    <span><i class="fa-solid fa-plane"></i> 飛越喜馬拉雅</span>
+                    <span><i class="fa-solid fa-mountain"></i> 最高 5650m</span>
+                    <span><i class="fa-solid fa-person-hiking"></i> 祖楚寺 (Zutulpuk)</span>
                 </div>
-                <h2>離開西藏・圓滿賦歸</h2>
+                <h2>轉山第二日・卓瑪拉山口</h2>
                 <div class="details-text">
-                    自拉薩貢嘎機場 (Gonggar Airport) 搭機飛回加德滿都。在滿願佛塔 (Boudhanath Stupa) 繞塔感恩後圓滿賦歸。
+                    <ul>
+                        <li><strong>極限挑戰：</strong>行程中最艱難的核心日。清晨從止熱寺出發，面對身體與心的極限。</li>
+                        <li><strong>跨越山口：</strong>跨越整圈轉山最高點——海拔 5650 公尺的卓瑪拉山口 (Dolma La Pass)。</li>
+                        <li><strong>內在轉化：</strong>在極寒與稀薄空氣中經歷靈性突破與身心轉化，傍晚抵達祖楚寺 (Zutulpuk Monastery)。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 13 -->
+        <div class="day-block">
+            <div class="day-number">13<span>5/28 THU</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 3900m</span>
+                    <span><i class="fa-solid fa-car"></i> 薩嘎 (Saga) 當地旅館</span>
+                </div>
+                <h2>轉山圓滿・前往薩嘎 (Saga)</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>徒步尾聲：</strong>完成最後 12-14 公里的徒步路段，緩步下山返回塔欽 (Darchen)。</li>
+                        <li><strong>圓滿釋放：</strong>回程中身心逐漸放鬆，整個轉山圓滿結束，感受難以言喻的祝福、平靜與釋放。</li>
+                        <li><strong>驅車移動：</strong>午後驅車約 6-7 小時前往薩嘎 (Saga) 休息。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 14 -->
+        <div class="day-block">
+            <div class="day-number">14<span>5/29 FRI</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 3850m</span>
+                    <span><i class="fa-solid fa-vihara"></i> 日喀則當地旅館</span>
+                </div>
+                <h2>薩嘎 → 日喀則 (Xigaze)・江孜巡禮</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>最長車程：</strong>全天最長的車程，緩緩向東移動，沿途欣賞壯麗的高原風景。</li>
+                        <li><strong>冰川與寺廟：</strong>觀賞宏偉的卡若拉冰川 (Karola Glacier)；參訪江孜 (Gyantse) 著名的白居寺 (Palcho Monastery)，觀看由十萬尊佛像雕塑而成的壯麗佛塔。</li>
+                        <li><strong>抵達日喀則：</strong>抵達西藏第二大城市日喀則 (Xigaze)。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 15 -->
+        <div class="day-block">
+            <div class="day-number">15<span>5/30 SAT</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-mountain"></i> 海拔 3650m</span>
+                    <span><i class="fa-solid fa-hotel"></i> 拉薩當地旅館</span>
+                </div>
+                <h2>日喀則 → 聖城拉薩 (Lhasa)</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>扎什倫布寺：</strong>上午參訪歷代班禪喇嘛的駐錫地——扎什倫布寺 (Tashi Lhunpo Monastery)。</li>
+                        <li><strong>市集漫步：</strong>漫步當地市集至下午 3 點，感受藏地日常生活與宗教氣息。</li>
+                        <li><strong>進入心臟：</strong>傍晚沿著雅魯藏布江，驅車回到西藏的心臟地帶，抵達聖城拉薩 (Lhasa)，晚上自由活動。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 16 -->
+        <div class="day-block">
+            <div class="day-number">16<span>5/31 SUN</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-moon"></i> 薩嘎月滿月</span>
+                    <span><i class="fa-solid fa-hotel"></i> 拉薩當地旅館</span>
+                </div>
+                <h2>拉薩聖境・薩嘎月滿月</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>布達拉宮：</strong>適逢薩嘎月 (Saga Dawa) 滿月。沿著千梯走進宏偉的布達拉宮 (Potala Palace)，親謁觀世音菩薩道場，俯瞰聖城。</li>
+                        <li><strong>大昭寺：</strong>前往西藏人的精神家園大昭寺 (Jokhang Temple)，頂禮 12 歲釋迦牟尼等身像，見像如見佛。</li>
+                        <li><strong>八廓街：</strong>漫步拉薩最古老的八廓街 (Barkhor Street)，品嚐酥油茶與藏麵，體驗傳統與現代交織的當地生活。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 17 -->
+        <div class="day-block">
+            <div class="day-number">17<span>6/01 MON</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-plane"></i> 加德滿都</span>
+                    <span><i class="fa-solid fa-hotel"></i> Ananda Tree House</span>
+                </div>
+                <h2>離開西藏・回首神山</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>飛越雪峰：</strong>自拉薩貢嘎機場 (Gonggar Airport) 搭機飛回加德滿都 (Kathmandu)。</li>
+                        <li><strong>空中俯瞰：</strong>飛行途中，俯瞰連綿的喜馬拉雅山脈 (Himalayas) 雪峰與雲海交織。</li>
+                        <li><strong>朝聖回顧：</strong>為這趟轉山朝聖之旅增添最後的美好風景與回憶。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 18 -->
+        <div class="day-block">
+            <div class="day-number">18<span>6/02 TUE</span></div>
+            <div class="day-content">
+                <div class="info-bar">
+                    <span><i class="fa-solid fa-heart"></i> 圓滿賦歸</span>
+                </div>
+                <h2>滿願感恩・回歸家園</h2>
+                <div class="details-text">
+                    <ul>
+                        <li><strong>繞塔感恩：</strong>早晨前往滿願佛塔 (Boudhanath Stupa)，繞塔感恩整趟朝聖旅程的圓滿。</li>
+                        <li><strong>自由活動：</strong>可購買紀念品或享受片刻寧靜。</li>
+                        <li><strong>賦歸：</strong>依個人回程航班時間搭機返家，火馬年西藏岡仁波齊轉山之行圓滿。</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
     </section>
 
-    <!-- 旅程實務指南 (新區塊) -->
+    <!-- 旅程實務指南 -->
     <section id="logistics" class="logistics-section">
         <div class="logistics-container">
-            <h2 class="itinerary-title" style="margin-bottom: 80px;">旅程實務指南</h2>
+            <h2 class="itinerary-title" style="margin-bottom: 60px;">旅程實務指南</h2>
             <div class="logistics-grid">
                 
                 <div class="logistics-item">
@@ -684,15 +943,15 @@
                     <ul>
                         <li>
                             <strong>尼泊爾 (Nepal)</strong>
-                            <span>建議每人準備 100~500 盧比 (NPR) 或更多，視服務性質而定。</span>
+                            <span>建議 100~500 盧比 (NPR)，依服務性質調整。</span>
                         </li>
                         <li>
-                            <strong>西藏 (Tibet)</strong>
-                            <span>給予導遊與司機的小費建議約為每人每日 20-50 人民幣 (RMB)。</span>
+                            <strong>西藏導遊與司機</strong>
+                            <span>建議每人每日約 20-50 人民幣 (RMB)。</span>
                         </li>
                         <li>
-                            <strong>行李員 (Bellhop)</strong>
-                            <span>飯店或餐廳行李搬運建議給予 5-10 人民幣/次。</span>
+                            <strong>行李搬運</strong>
+                            <span>飯店行李員建議給予 5-10 人民幣/次。</span>
                         </li>
                     </ul>
                 </div>
@@ -701,16 +960,16 @@
                     <h3>挑夫與負重 (Porters)</h3>
                     <ul>
                         <li>
-                            <strong>個人隨身輕包 (Day Pack)</strong>
-                            <span>建議控制在 6 公斤內，僅裝載飲水、保暖衣物、相機與緊急藥品。</span>
+                            <strong>個人輕包 (Day Pack)</strong>
+                            <span>強烈建議控制在 6 公斤內，僅裝必需品與急藥。</span>
                         </li>
                         <li>
-                            <strong>挑夫背負背包 (Porter Bag)</strong>
-                            <span>每人限重約 10-12 公斤，通常以件計酬。請務必輕鬆打包，遺漏物品可在在地購買。</span>
+                            <strong>挑夫包 (Porter Bag)</strong>
+                            <span>限重 10-12 公斤。請輕鬆打包，遺漏物品可於在地購買。</span>
                         </li>
                         <li>
-                            <strong>額外交通費用</strong>
-                            <span>如需使用馬匹或犛牛協助轉山，費用需由個人額外自費。</span>
+                            <strong>馬匹與犛牛</strong>
+                            <span>轉山若需動物輔助，費用需由個人額外自費。</span>
                         </li>
                     </ul>
                 </div>
@@ -720,29 +979,29 @@
                     <ul>
                         <li>
                             <strong>電子支付 (E-Wallet)</strong>
-                            <span>西藏地區行動支付極為普及，建議出發前先安裝並儲值「支付寶 (Alipay)」或「微信支付」。</span>
+                            <span>西藏普及支付寶 (Alipay) 或微信。建議先儲值。</span>
                         </li>
                         <li>
-                            <strong>網路通訊 (Network)</strong>
-                            <span>西藏 WiFi 無法直接翻牆。建議提前辦理海外漫遊或購買具翻牆功能的網卡，並安裝 VPN (如 NordVPN)。</span>
+                            <strong>網路翻牆 (VPN)</strong>
+                            <span>西藏 WiFi 無法直接存取 Line/FB。請備翻牆網卡或 VPN。</span>
                         </li>
                         <li>
-                            <strong>貨幣與電壓</strong>
-                            <span>尼泊爾建議備美金大鈔換匯；兩地電壓皆為 220V，建議攜帶萬用轉接頭。</span>
+                            <strong>電壓與貨幣</strong>
+                            <span>尼泊爾備美金換匯；兩地皆 220V，備萬用轉接頭。</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="logistics-item">
-                    <h3>費用備註 (Exclusions)</h3>
+                    <h3>不包含費用 (Exclusions)</h3>
                     <ul>
                         <li>
-                            <strong>個人預算建議</strong>
-                            <span>建議額外攜帶 600-1000 美金，用於自由時間購物、自費按摩或藏醫療程。</span>
+                            <strong>個人預算</strong>
+                            <span>建議帶 600-1000 美金 (USD) 供購物與自費療程。</span>
                         </li>
                         <li>
-                            <strong>不包含項目</strong>
-                            <span>包含尼泊爾簽證費、個人保險、寺廟內攝影費、個人飲品與紀念品花費。</span>
+                            <strong>行政與個人開銷</strong>
+                            <span>尼泊爾簽證費、個人保險、寺廟攝影費。</span>
                         </li>
                     </ul>
                 </div>
