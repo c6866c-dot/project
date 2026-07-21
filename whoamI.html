@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我是誰 · Nan Yar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700;900&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #EDE6D8;
+    --paper-deep: #E1D7C4;
+    --paper-dark: #D8CBB2;
+    --ink: #1A1714;
+    --ink-soft: #332E24;
+    --ink-faint: #59503F;
+    --seal: #7A2318;
+    --seal-soft: #7A23182E;
+    --rule: #C9BC9E;
+    --dur: 520ms;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Serif TC', serif;
+    transition:background var(--dur) ease, color var(--dur) ease;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--seal-soft); }
+
+  /* progress rail */
+  #rail{
+    position:fixed; left:0; top:0; width:3px; height:100%;
+    background:var(--rule); z-index:60; transition:background var(--dur);
+  }
+  #rail-fill{
+    width:100%; height:0%; background:var(--seal); transition:height 60ms linear;
+  }
+
+  /* HERO */
+  .hero{
+    min-height:100svh;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding:80px 24px 60px;
+    position:relative;
+  }
+  .ensou-wrap{ width:min(46vw, 220px); height:min(46vw,220px); margin-bottom:8px; }
+  .ensou{ width:100%; height:100%; }
+  .ensou path{
+    fill:none;
+    stroke:var(--ink);
+    stroke-width:6;
+    stroke-linecap:round;
+    stroke-dasharray:900;
+    stroke-dashoffset:900;
+    animation:draw 2.6s cubic-bezier(.65,0,.35,1) forwards 0.3s, breathe 6s ease-in-out infinite 3s;
+    transform-origin:center;
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes breathe{
+    0%,100%{ opacity:.85; transform:scale(1); }
+    50%{ opacity:1; transform:scale(1.015); }
+  }
+  h1.title{
+    font-size:clamp(40px, 9vw, 78px);
+    font-weight:900;
+    letter-spacing:.14em;
+    margin:6px 0 4px;
+  }
+  .subtitle-en{
+    font-family:'Noto Sans TC', sans-serif;
+    font-weight:300;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:36px;
+  }
+  .attrib{
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:13px;
+    color:var(--ink-faint);
+    letter-spacing:.06em;
+    margin-bottom:44px;
+  }
+  .lede{
+    max-width:560px;
+    font-size:16px;
+    line-height:2.05;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  .scroll-cue{
+    margin-top:56px;
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:11px;
+    letter-spacing:.3em;
+    color:var(--ink-faint);
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .scroll-cue .line{
+    width:1px; height:38px; background:var(--ink-faint);
+    animation:sink 2.2s ease-in-out infinite;
+  }
+  @keyframes sink{ 0%,100%{ transform:scaleY(1); opacity:.4;} 50%{ transform:scaleY(1.3); opacity:1;} }
+
+  /* SCROLL SECTION */
+  .scroll-section{
+    max-width:720px;
+    margin:0 auto;
+    padding:40px 24px 200px;
+    position:relative;
+  }
+  .section-head{
+    text-align:center;
+    padding:60px 0 70px;
+  }
+  .section-head .cn{
+    font-size:22px; font-weight:700; letter-spacing:.5em; margin-left:.5em;
+  }
+  .section-head .sub{
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:12px; color:var(--ink-faint); letter-spacing:.2em; margin-top:14px;
+  }
+
+  .qa{
+    border-top:1px solid var(--rule);
+    padding:34px 0;
+    position:relative;
+  }
+  .qa:last-child{ border-bottom:1px solid var(--rule); }
+
+  .qa-head{
+    display:flex; align-items:flex-start; gap:20px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .qa-num{
+    flex:0 0 auto;
+    width:44px; height:44px;
+    border-radius:50%;
+    border:1.4px solid var(--rule);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:14px; color:var(--ink-soft);
+    position:relative;
+    transition:all .4s ease;
+    flex-shrink:0;
+  }
+  .qa.open .qa-num{
+    border-color:var(--seal);
+    color:var(--paper);
+    background:var(--seal);
+  }
+  .qa-q{
+    flex:1;
+    font-size:18px;
+    line-height:1.7;
+    font-weight:500;
+    padding-top:8px;
+    transition:color .3s ease;
+  }
+  .qa.open .qa-q{ color:var(--seal); }
+  .qa-toggle{
+    flex:0 0 auto;
+    width:20px; height:20px;
+    margin-top:16px;
+    position:relative;
+  }
+  .qa-toggle::before, .qa-toggle::after{
+    content:''; position:absolute; background:var(--ink-soft);
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    transition:transform .35s ease, background .3s ease;
+  }
+  .qa-toggle::before{ width:14px; height:1.4px; }
+  .qa-toggle::after{ width:1.4px; height:14px; }
+  .qa.open .qa-toggle::after{ transform:translate(-50%,-50%) rotate(90deg) scaleY(0); }
+  .qa.open .qa-toggle::before{ background:var(--seal); }
+
+  .qa-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .6s cubic-bezier(.4,0,.2,1);
+  }
+  .qa-body-inner{
+    padding:22px 0 6px 64px;
+    font-size:15.5px;
+    line-height:2.1;
+    color:var(--ink-soft);
+    font-weight:400;
+  }
+  .qa-body-inner p{ margin:0 0 1.1em; }
+  .qa-body-inner p:last-child{ margin-bottom:0; }
+
+  /* random inquiry floating button */
+  .float-btn{
+    position:fixed; bottom:26px; left:50%; transform:translateX(-50%);
+    z-index:55;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:13px; letter-spacing:.15em;
+    border:none; border-radius:999px;
+    padding:14px 26px;
+    cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+    transition:transform .25s ease, background .3s ease;
+  }
+  .float-btn:hover{ transform:translateX(-50%) translateY(-3px); }
+  .float-btn:active{ transform:translateX(-50%) translateY(0px) scale(.97); }
+
+  /* footer */
+  .footer{
+    max-width:720px; margin:0 auto;
+    padding:80px 24px 140px;
+    text-align:center;
+  }
+  .footer p{
+    font-family:'Noto Sans TC', sans-serif;
+    font-size:12.5px; color:var(--ink-faint);
+    letter-spacing:.08em; line-height:2;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .ensou path, .scroll-cue .line{ animation:none !important; }
+    html{ scroll-behavior:auto; }
+  }
+
+  @media (max-width:560px){
+    .qa-q{ font-size:16.5px; }
+    .qa-body-inner{ padding-left:0; }
+  }
+
+  :focus-visible{ outline:2px solid var(--seal); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<div id="rail"><div id="rail-fill"></div></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="ensou-wrap">
+    <svg class="ensou" viewBox="0 0 200 200">
+      <path d="M 100 20
+               C 150 20, 180 60, 178 100
+               C 176 145, 140 178, 96 178
+               C 55 178, 22 148, 22 105
+               C 22 65, 52 30, 96 22" />
+    </svg>
+  </div>
+  <h1 class="title">我 是 誰</h1>
+  <div class="subtitle-en">Nan&nbsp;Yar&nbsp;·&nbsp;Who&nbsp;Am&nbsp;I</div>
+  <div class="attrib">拉玛那尊者　二十八問　繁體中文全譯</div>
+  <p class="lede">
+    所有眾生都希望永遠快樂，沒有絲毫痛苦。在每個人身上，都可以觀察到對自己至高無上的愛；
+    而唯有快樂才是引發愛的源泉。因此，為了獲得那屬於自身本性、且在無夢深眠（deep sleep）狀態中所體驗到的快樂（在那裡沒有心智的存在），
+    人應當認識自己為「真我」（Self）。而要實現這一點，以「我是誰？」為形式的「知識之道」（Path of Knowledge）與自我探究（inquiry），是主要的途徑。
+  </p>
+  <div class="scroll-cue"><span>探　究</span><span class="line"></span></div>
+</section>
+
+<!-- Q&A SCROLL -->
+<section class="scroll-section" id="scrollSection">
+  <div class="section-head">
+    <div class="cn">問　與　答</div>
+    <div class="sub">點選展開　·　共二十八則</div>
+  </div>
+
+  <div id="qaList"></div>
+</section>
+
+<button class="float-btn" id="randomBtn">隨機探究一則</button>
+
+<footer class="footer">
+  <p>探究那處於束縛中的「自我」之本質，並體悟自己真實的本性，就是解脫。<br>— 全文終 —</p>
+</footer>
+
+<script>
+const data = [
+["我是誰？","由七種體液（dhatus）所組成的粗顯肉身，我不是；五種認知感覺器官，即聽覺、觸覺、視覺、味覺與嗅覺（分別感知其對應的對象：聲音、觸感、顏色、味道與氣味），我不是；五種意業/行動器官，即言語、運動、抓取、排泄與生殖器官（分別執行其對應的功能：說話、移動、抓取、排泄與享受），我不是；五種生命氣息（prana 等，執行吸氣等五種功能），我不是；甚至連思考的心智，我不是；那僅帶有對象的殘餘印象（residual impressions）、且沒有任何對象與功能的無明（nescience），我也不是。"],
+["如果這些我都不是，那我究竟是誰？","在將上述所有一切以「不是這個、不是這個」（Neti Neti）予以否定之後，那唯一留存下來的意識（Awareness），就是我。"],
+["意識的本質是什麼？","意識（Awareness）的本質是存在—意識—至樂（Existence-Consciousness-Bliss / Sat-Chit-Ananda）。"],
+["何時能獲得對真我（Self）的體悟？","當作為「被觀照對象」的世界被移除時，就會獲得對「觀照者」——真我（Self）的體悟。"],
+["當世界（被視為真實）存在時，難道就不能體悟真我嗎？","不能。"],
+["為何？","觀照者與被觀照的對象，就像繩子與蛇一樣。正如除非除去「蛇」這種虛妄的認知，否則就無法產生對作為基質的「繩子」的正知；同理，除非除去「世界是真實的」這種信念，否則就無法獲得對作為基質的「真我」的體悟。"],
+["作為被觀照對象的世界，何時會被消除？","當作為一切認知與一切行動之根源的心智（mind）變得寂靜（quiescent）時，世界就會消失。"],
+["心智（Mind）的本質是什麼？","所謂的「心智」，是安住在真我（Self）之中的一種奇妙力量。它促使所有念頭升起。除了念頭之外，根本沒有所謂的「心智」。因此，念頭就是心智的本質。除了念頭之外，也沒有一個叫做「世界」的獨立實體。<br><br>在無夢深眠中沒有念頭，也沒有世界；在清醒與作夢的狀態中，有念頭存在，也有世界存在。正如蜘蛛從自身吐出（網）絲、又將絲收回自身一樣，心智也是從自身投射出世界，又將世界歸複回自身。<br><br>當心智從真我中走出來時，世界便顯現；因此，當世界顯現（被視為真實）時，真我便不顯現；而當真我顯現（發光）時，世界就不顯現。<br><br>當一個人持續不斷地探究心智的本質時，心智最終會消亡，只留下真我。被稱為真我的，就是阿特曼（Atman）。心智永遠只能依附於某種粗顯的事物上，它無法獨自存在。正是這個心智，被稱為細微身或個體靈魂（jiva）。"],
+["理解心智本質的探究途徑是什麼？","在這個身體中以「我」的形式升起的那部分，就是心智。如果一個人探究在身體的何處首先升起「我」這個念頭，他就會發現它升起於心（Heart）。那才是心智的源頭。即使一個人不斷地念想「我—我」，他也會被引導至那個地方。<br><br>在心智所升起的所有念頭中，「我」念（'I'-thought）是第一個。只有在「我」念升起之後，其他念頭才會升起。只有在第一人稱代詞（我）出現之後，第二人稱（你）與第三人稱（他/它）的代詞才會出現；沒有第一人稱代詞，就不會有第二與第三人稱。"],
+["心智如何才能變得寂靜？","透過「我是誰？」的探究。「我是誰？」這個念頭會摧毀所有其他的念頭，並且就像用來攪動火葬柴堆的木棍一樣，它最終也會自我毀滅。屆時，便會升起「自我實現」（Self-realization）。"],
+["持續保持「我是誰？」這個念頭的途徑是什麼？","當其他念頭升起時，人不應該去追逐它們，而應該探究：「這些念頭是對誰升起的？」無論升起多少念頭都沒有關係。當每一個念頭升起時，都應該勤奮地探究：「這個念頭是對誰升起的？」隨之出現的答案將會是：「對我。」<br><br>隨後，如果一個人探究「我是誰？」，心智就會回到它的源頭，而剛升起的念頭也會變得寂靜。透過以此方式反覆練習，心智將培養出安住在其源頭的能力。<br><br>當細微的心智通過大腦和感官向外時，粗顯的名相（names and forms）就會顯現；當它安留在心（Heart）中時，名相就會消失。不讓心智向外，而是將其保留在心之中，這被稱為「向內」（antarmukha）。讓心智從心中走出去，則被稱為「外化」（bahirmukha）。<br><br>因此，當心智安留在心之中時，作為一切念頭源頭的「我」將會消逝，而永遠存在的「真我」將會發光。無論一個人做什麼，都應該不帶有自我中心（egoity）的「我」去做。如果一個人以這種方式行事，一切事物都將顯現為神（Shiva/God）的本質。"],
+["難道沒有其他方法可以讓心智變得寂靜嗎？","除了探究（inquiry）之外，沒有其他充分的方法。如果試圖透過其他方法來控制心智，心智看似被控制了，但隨後又會再次浮現。<br><br>透過調息（breath control），心智也會變得寂靜；但只有在呼吸保持被控制的期間，它才會是寂靜的；而當呼吸恢復時，心智也會再次開始活動，並在殘餘印記的驅使下到處遊走。<br><br>心智與呼吸的源頭是相同的。念頭，確實就是心智的本質。「我」念是心智的第一個念頭，而那就是自我（egoity）。呼吸也起源於自我所起源的同一個地方。因此，當心智變得寂靜時，呼吸就被控制了；而當呼吸被控制時，心智也就變得寂靜了。<br><br>但是在深眠中，雖然心智變得寂靜，呼吸卻沒有停止。這是出於神的意志，為了保存身體，讓其他人不致於認為這具身體已經死亡。在清醒狀態與三摩地（samadhi）中，當心智變得寂靜時，呼吸就被控制了。呼吸是心智的粗顯形式。直到死亡時刻之前，心智都將呼吸保持在身體中；當身體死亡時，心智會連同呼吸一起帶走。因此，調息的練習僅僅是讓心智變得寂靜（manonigraha）的輔助手段，它並不能消滅心智（manonasa）。<br><br>就像調息的練習一樣，對神之形象的冥想、咒語（mantras）的重複誦念、對食物的限制等，都只是讓心智變得寂靜的輔助手段。<br><br>透過對神之形象的冥想以及對咒語的誦念，心智會變得專一（one-pointed）。心智總是會遊走；正如給大象一條鐵鍊讓它用象鼻握著時，它就會一直握著鐵鍊而不會拿其他東西一樣，當心智專注於一個名號或形象時，它就會只緊抓著那個名號或形象。<br><br>當心智以無數念頭的形式擴展時，每一個念頭都會變得微弱；但隨著念頭的消融，心智會變得專一且強大；對於這樣的心智而言，自我探究將會變得容易。在所有限制性規則中，關於食用適量純質食物（sattvic food）的規則是最好的；透過遵守這條規則，心智的純質（sattvic）品質將會增加，這將有助於自我探究。"],
+["對於對象的殘餘印象（念頭）就像海洋的波浪一樣無邊無際，它們何時才能被消滅？","隨著對「真我」的冥想變得越來越自然與自發（spontaneous），念頭將會被消滅。"],
+["來自無始以來的殘餘印象真的可能被消融，讓人保持為純淨的真我嗎？","不要屈服於「這是否可能？」的懷疑，而應該堅持不懈地握持對真我的冥想。一個人即使是個大罪人，也不應該擔憂和哭泣說：「噢！我是個罪人，我該如何才能得救？」一個人應該完全放棄「我是罪人」的念頭，深刻地專注於對真我的冥想；這樣，他就一定會成功。<br><br>並沒有兩個心智——一個是善的，另一個是惡的；心智只有一個。是殘餘印象分為兩種：吉祥的與不祥的。當心智受吉祥印象影響時，被稱為善；受不祥印象影響時，被視為惡。<br><br>不應允許心智轉向世俗對象以及與他人相關的事物。無論其他人有多壞，都不應該對他們懷有恨意。欲望與恨意都應被摒棄。一個人給予他人的一切，都是給予他自己的。如果明白這個真理，誰還會不給予他人呢？當一個人的真我升起時，一切皆升起；當一個人的真我變得寂靜時，一切皆變得寂靜。我們以謙卑的態度處事到什麼程度，就會產生相應的善果。如果心智變得寂靜，一個人可以在任何地方生活。"],
+["探究應該練習多久？","只要心智中還存在對對象的印象，就還需要進行「我是誰？」的探究。當念頭升起時，就應該透過探究，在其起源之處立刻將其消滅。如果一個人不間斷地求助於對真我的觀照，直到獲得真我為止，僅憑這一點就足夠了。只要城堡內還有敵人，他們就會繼續湧出；如果他們一出現就被消滅，城堡就會落入我們手中。"],
+["真我的本質是什麼？","真實存在的唯有真我。世界、個體靈魂與神，都是在真我中顯現的現象，就像珍珠母上的銀光一樣；這三者同時顯現，也同時消失。<br><br>真我就是那個完全沒有「我」念存在的地方。那被稱為「靜默」（Silence）。真我本身就是世界；真我本身就是「我」；真我本身就是神；一切都是神（Shiva），都是真我。"],
+["難道一切不都是神的作為嗎？","沒有欲望、決意或努力，太陽升起了；僅憑它的存在，陽光石發出火花，蓮花綻放，人們執行各種功能然後休息。正如在磁鐵面前指南針會移動一樣，僅憑神的臨在，受三種宇宙功能或五重神聖活動所管轄的靈魂，就會根據各自的業力執行其行動然後休息。<br><br>神沒有決意；沒有業力會附著於祂。這就像世俗的行動不會影響太陽，或者像其他四種元素的優缺點不會影響無所不在的虛空一樣。"],
+["在奉獻者之中，誰是最偉大的？","將自己完全奉獻給「作為神的真我」的人，是最卓越的奉獻者。將自己奉獻給神，意味著持續保持在真我之中，不給除了「真我」之外的任何念頭升起的空間。<br><br>無論什麼負擔拋給神，祂都會承擔。既然神的至高力量使萬物運轉，我們為什麼不把自己交託給祂，反而要不斷地用「該做什麼、怎麼做，不該做什麼、怎麼不去做」的念頭來困擾自己呢？我們知道火車承載著所有的行李，那麼在上了火車之後，我們為什麼還要笨拙地把小包裹提在頭上惹來不適，而不是把它放在火車上舒舒服服地休息呢？"],
+["什麼是不執著（Non-attachment）？","當念頭升起時，在其起源之處將其徹底消滅、不留絲毫殘餘，這就是不執著。正如採珠人將石頭綁在腰上，潛入海底在那裡採集珍珠一樣，我們每個人都應該具備不執著，潛入自身內部並獲得「真我之珠」。"],
+["神與導師（Guru）難道不能實現靈魂的解脫嗎？","神與導師只會指引通往解脫的道路；他們本身不會直接把靈魂帶到解脫的狀態。<br><br>事實上，神與導師並沒有不同。正如落入老虎口中的獵物無法逃脫一樣，那些進入導師恩典目光範圍內的人，將會被導師救贖而不會迷失；然而，每個人都應該透過自己的努力，遵循神或導師所指引的道路來獲得解脫。一個人只能透過自己智慧的眼睛來認識自己，而無法透過他人的眼睛。難道叫拉瑪的人需要鏡子才能知道自己是拉瑪嗎？"],
+["對於渴望解脫的人來說，是否有必要探究「範疇/元素」（tattvas）的本質？","正如想丟垃圾的人不需要去分析垃圾是什麼一樣，想認識真我的人不需要去計算範疇的數量或探究它們的特徵；他所需要做的，就是徹底摒棄遮蔽真我的所有範疇。世界應該被視為一場夢。"],
+["清醒與作夢之間沒有區別嗎？","清醒的時間長，而作夢的時間短；除此之外，兩者沒有區別。正如清醒時發生的事情在清醒時看起來很真實一樣，夢中的事情在作夢時也顯得很真實。在夢中，心智採用了另一具身體。在清醒與作夢兩種狀態下，念頭、名相都是同時發生的。"],
+["對於那些渴望解脫的人來說，讀書有什麼用嗎？","所有的經典都說，為了獲得解脫，人應該讓心智變得寂靜；因此，它們最終的教導就是心智應該被歸於寂靜；一旦理解了這一點，就沒有必要進行無休止的閱讀了。為了使心智寂靜，一個人只需要在自身內部探究自己的真我究竟是什麼；這種探索又怎能透過書籍來完成呢？一個人應該透過自己智慧的眼睛來認識自己的真我，而不是透過別人的眼睛。<br><br>真我在五重鞘（five sheaths）之內；但書籍卻在五重鞘之外。既然真我必須透過摒棄五重鞘來探究，那麼在書籍中尋找真我就是徒勞無功的。總有一天，一個人必須忘掉他所學過的一切。"],
+["什麼是快樂（Happiness）？","快樂就是真我的本質；快樂與真我並無不同。世界上的任何對象中都沒有快樂。我們出於無明，幻想自己能從對象中獲得快樂。<br><br>當心智向外時，它體驗到的是痛苦。事實上，當心智的欲望得到滿足時，它會回到它自己的地方，並享受那屬於真我的快樂。同理，在睡眠、三摩地、暈厥的狀態中，以及當所渴望的對象被獲得、或所厭惡的對象被移除時，心智都會轉向內部，並享受純粹的「真我之樂」。<br><br>因此，心智永無止境地交替進行著「從真我走出」與「回到真我」。在樹蔭下，涼爽令人心曠神怡；但在外面的曠野中，酷熱卻令人難受。一個一直在太陽底下行走的人，當他來到樹蔭下時會感到涼爽。如果一個人不斷地從樹蔭走到太陽下，又從太陽下走回樹蔭，他就是個愚者。智者則會永遠停留在樹蔭下。<br><br>同理，知曉真理者的心智不會離開梵。相反地，無明者的心智在世界上旋轉，感到痛苦萬分，只有極短暫的時間會回到梵去體驗快樂。事實上，所謂的世界只不過是念頭。當世界消失時，即沒有念頭時，心智體驗到快樂；而當世界顯現時，它就經歷痛苦。"],
+["什麼是智慧洞見（Jnana-drishti）？","保持平靜，就被稱為智慧洞見。保持平靜，就是將心智消融於真我之中。預知過去、現在與未來的發生，以及千里眼/天眼通（clairvoyance），並不構成智慧洞見。"],
+["無欲（Desirelessness）與智慧（Wisdom）之間的關係是什麼？","無欲就是智慧。兩者並無不同，它們是同一件事。無欲，意味著抑制心智轉向任何對象；智慧，意味著沒有任何對象的顯現。換句話說，不尋求真我之外的事物就是不執著或無欲；不離開真我就是智慧。"],
+["探究（Inquiry）與冥想（Meditation）有何區別？","探究（Inquiry）在於將心智保留/扣留在真我之中。冥想（Meditation）則在於思考「自己的真我就是梵、是存在—意識—至樂」。"],
+["什麼是解脫（Liberation）？","探究那處於束縛中的「自我」之本質，並體悟自己真實的本性，就是解脫。"]
+];
+
+const list = document.getElementById('qaList');
+data.forEach((item, i) => {
+  const num = String(i+1).padStart(2,'0');
+  const wrap = document.createElement('div');
+  wrap.className = 'qa';
+  wrap.id = 'qa-' + (i+1);
+  wrap.innerHTML = `
+    <div class="qa-head" role="button" tabindex="0" aria-expanded="false">
+      <div class="qa-num">${num}</div>
+      <div class="qa-q">${item[0]}</div>
+      <div class="qa-toggle"></div>
+    </div>
+    <div class="qa-body">
+      <div class="qa-body-inner"><p>${item[1]}</p></div>
+    </div>
+  `;
+  list.appendChild(wrap);
+
+  const head = wrap.querySelector('.qa-head');
+  const body = wrap.querySelector('.qa-body');
+
+  function toggle(){
+    const isOpen = wrap.classList.contains('open');
+    if(isOpen){
+      wrap.classList.remove('open');
+      body.style.maxHeight = null;
+      head.setAttribute('aria-expanded','false');
+    } else {
+      wrap.classList.add('open');
+      body.style.maxHeight = body.scrollHeight + 'px';
+      head.setAttribute('aria-expanded','true');
+    }
+  }
+  head.addEventListener('click', toggle);
+  head.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+  });
+});
+
+// re-measure open panels on resize (font reflow)
+window.addEventListener('resize', ()=>{
+  document.querySelectorAll('.qa.open .qa-body').forEach(b=>{
+    b.style.maxHeight = b.scrollHeight + 'px';
+  });
+});
+
+// progress rail
+const railFill = document.getElementById('rail-fill');
+function updateRail(){
+  const h = document.documentElement;
+  const scrolled = h.scrollTop;
+  const max = h.scrollHeight - h.clientHeight;
+  railFill.style.height = (max>0 ? (scrolled/max*100) : 0) + '%';
+}
+document.addEventListener('scroll', updateRail, {passive:true});
+updateRail();
+
+// random inquiry
+document.getElementById('randomBtn').addEventListener('click', ()=>{
+  const idx = Math.floor(Math.random()*data.length) + 1;
+  document.querySelectorAll('.qa.open').forEach(el=>{
+    if(el.id !== 'qa-'+idx){
+      el.classList.remove('open');
+      el.querySelector('.qa-body').style.maxHeight = null;
+    }
+  });
+  const target = document.getElementById('qa-'+idx);
+  if(!target.classList.contains('open')){
+    target.classList.add('open');
+    const body = target.querySelector('.qa-body');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+  target.scrollIntoView({behavior:'smooth', block:'center'});
+});
+</script>
+</body>
+</html>
